@@ -6,7 +6,7 @@
 /storage/*.key
 /storage/pail
 /vendor
-
+.vsidx
 .phpactor.json
 .phpunit.result.cache
 Homestead.json
