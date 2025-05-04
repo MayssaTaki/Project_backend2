@@ -1,0 +1,42 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+
+class Teacher extends Model
+{
+    use HasFactory;     use Notifiable;
+
+
+    protected $fillable = [
+        'user_id',
+        'first_name',
+        'last_name',
+        'specialization',
+        'Previous_experiences',
+        'phone',
+        'profile_image',
+        'country',
+        'city',
+        'gender',
+        'status',
+    ];
+    
+
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function wallet()
+    {
+        return $this->morphOne(Wallet::class, 'walletable');
+    }
+    
+
+
+}

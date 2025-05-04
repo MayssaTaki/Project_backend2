@@ -1,0 +1,419 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\xampp\\htdocs\\project2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\project2\\app\\Services\\UserService.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Services\\UserService.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\project2\\app\\Http\\Requests\\StudentRegisterRequest.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Http\\Requests\\StudentRegisterRequest.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\project2\\routes\\api.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:routes\\api.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\project2\\app\\Http\\Requests\\TeacherRegisterRequest.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Http\\Requests\\TeacherRegisterRequest.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\project2\\app\\Http\\Requests\\UserRegisterRequest.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Http\\Requests\\UserRegisterRequest.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\project2\\app\\Http\\Controllers\\TeacherController.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Http\\Controllers\\TeacherController.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\project2\\app\\Repositories\\UserRepository.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Repositories\\UserRepository.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\project2\\app\\Http\\Controllers\\UserController.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Http\\Controllers\\UserController.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\project2\\app\\Repositories\\TeacherRepository.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Repositories\\TeacherRepository.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\project2\\app\\Services\\TeacherService.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Services\\TeacherService.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\project2\\app\\Exceptions\\TeacherRegistrationException.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Exceptions\\TeacherRegistrationException.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\project2\\app\\Exceptions\\UserRegistrationException.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Exceptions\\UserRegistrationException.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\project2\\app\\Models\\User.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Models\\User.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\project2\\app\\Models\\Student.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Models\\Student.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\project2\\app\\Services\\TransactionService.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Services\\TransactionService.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\project2\\app\\Http\\Requests\\LoginRequest.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Http\\Requests\\LoginRequest.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\project2\\app\\Http\\Controllers\\AuthController.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Http\\Controllers\\AuthController.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\project2\\app\\Exceptions\\AuthenticationException.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Exceptions\\AuthenticationException.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\project2\\app\\Services\\AuthService.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Services\\AuthService.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\project2\\app\\Enums\\UserGender.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Enums\\UserGender.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\project2\\app\\Enums\\UserRole.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Enums\\UserRole.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\project2\\database\\seeders\\DatabaseSeeder.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:database\\seeders\\DatabaseSeeder.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\project2\\database\\seeders\\UserSeeder.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:database\\seeders\\UserSeeder.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\project2\\database\\migrations\\0001_01_01_000000_create_users_table.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:database\\migrations\\0001_01_01_000000_create_users_table.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StudentRegisterRequest.php",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Http\\Requests\\StudentRegisterRequest.php",
+              "RelativeDocumentMoniker": "app\\Http\\Requests\\StudentRegisterRequest.php",
+              "ToolTip": "C:\\xampp\\htdocs\\project2\\app\\Http\\Requests\\StudentRegisterRequest.php",
+              "RelativeToolTip": "app\\Http\\Requests\\StudentRegisterRequest.php",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAACcAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-03T17:58:44.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TeacherRegisterRequest.php",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Http\\Requests\\TeacherRegisterRequest.php",
+              "RelativeDocumentMoniker": "app\\Http\\Requests\\TeacherRegisterRequest.php",
+              "ToolTip": "C:\\xampp\\htdocs\\project2\\app\\Http\\Requests\\TeacherRegisterRequest.php",
+              "RelativeToolTip": "app\\Http\\Requests\\TeacherRegisterRequest.php",
+              "ViewState": "AQIAABQAAAAAAAAAAAAgwDQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-03T17:41:15.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserRegisterRequest.php",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Http\\Requests\\UserRegisterRequest.php",
+              "RelativeDocumentMoniker": "app\\Http\\Requests\\UserRegisterRequest.php",
+              "ToolTip": "C:\\xampp\\htdocs\\project2\\app\\Http\\Requests\\UserRegisterRequest.php",
+              "RelativeToolTip": "app\\Http\\Requests\\UserRegisterRequest.php",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAgwCUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-03T17:39:34.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TeacherController.php",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Http\\Controllers\\TeacherController.php",
+              "RelativeDocumentMoniker": "app\\Http\\Controllers\\TeacherController.php",
+              "ToolTip": "C:\\xampp\\htdocs\\project2\\app\\Http\\Controllers\\TeacherController.php",
+              "RelativeToolTip": "app\\Http\\Controllers\\TeacherController.php",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-03T17:33:22.384Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserService.php",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Services\\UserService.php",
+              "RelativeDocumentMoniker": "app\\Services\\UserService.php",
+              "ToolTip": "C:\\xampp\\htdocs\\project2\\app\\Services\\UserService.php",
+              "RelativeToolTip": "app\\Services\\UserService.php",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-03T16:24:17.458Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserController.php",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Http\\Controllers\\UserController.php",
+              "RelativeDocumentMoniker": "app\\Http\\Controllers\\UserController.php",
+              "ToolTip": "C:\\xampp\\htdocs\\project2\\app\\Http\\Controllers\\UserController.php",
+              "RelativeToolTip": "app\\Http\\Controllers\\UserController.php",
+              "ViewState": "AQIAABYAAAAAAAAAAAAAAFwAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-03T17:32:51.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TeacherRepository.php",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Repositories\\TeacherRepository.php",
+              "RelativeDocumentMoniker": "app\\Repositories\\TeacherRepository.php",
+              "ToolTip": "C:\\xampp\\htdocs\\project2\\app\\Repositories\\TeacherRepository.php",
+              "RelativeToolTip": "app\\Repositories\\TeacherRepository.php",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-03T17:28:28.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "api.php",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\routes\\api.php",
+              "RelativeDocumentMoniker": "routes\\api.php",
+              "ToolTip": "C:\\xampp\\htdocs\\project2\\routes\\api.php",
+              "RelativeToolTip": "routes\\api.php",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAADwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-02T14:50:12.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TeacherRegistrationException.php",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Exceptions\\TeacherRegistrationException.php",
+              "RelativeDocumentMoniker": "app\\Exceptions\\TeacherRegistrationException.php",
+              "ToolTip": "C:\\xampp\\htdocs\\project2\\app\\Exceptions\\TeacherRegistrationException.php",
+              "RelativeToolTip": "app\\Exceptions\\TeacherRegistrationException.php",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-03T17:26:19.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserRepository.php",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Repositories\\UserRepository.php",
+              "RelativeDocumentMoniker": "app\\Repositories\\UserRepository.php",
+              "ToolTip": "C:\\xampp\\htdocs\\project2\\app\\Repositories\\UserRepository.php",
+              "RelativeToolTip": "app\\Repositories\\UserRepository.php",
+              "ViewState": "AQIAACAAAAAAAAAAAAAAACAAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-02T14:16:20.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UserRegistrationException.php",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Exceptions\\UserRegistrationException.php",
+              "RelativeDocumentMoniker": "app\\Exceptions\\UserRegistrationException.php",
+              "ToolTip": "C:\\xampp\\htdocs\\project2\\app\\Exceptions\\UserRegistrationException.php",
+              "RelativeToolTip": "app\\Exceptions\\UserRegistrationException.php",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-03T16:29:56.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TeacherService.php",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Services\\TeacherService.php",
+              "RelativeDocumentMoniker": "app\\Services\\TeacherService.php",
+              "ToolTip": "C:\\xampp\\htdocs\\project2\\app\\Services\\TeacherService.php",
+              "RelativeToolTip": "app\\Services\\TeacherService.php",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-03T16:26:13.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Student.php",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Models\\Student.php",
+              "RelativeDocumentMoniker": "app\\Models\\Student.php",
+              "ToolTip": "C:\\xampp\\htdocs\\project2\\app\\Models\\Student.php",
+              "RelativeToolTip": "app\\Models\\Student.php",
+              "ViewState": "AQIAABwAAAAAAAAAAAAAACMAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-03T15:46:20.996Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "TransactionService.php",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Services\\TransactionService.php",
+              "RelativeDocumentMoniker": "app\\Services\\TransactionService.php",
+              "ToolTip": "C:\\xampp\\htdocs\\project2\\app\\Services\\TransactionService.php",
+              "RelativeToolTip": "app\\Services\\TransactionService.php",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-03T14:41:12.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AuthController.php",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Http\\Controllers\\AuthController.php",
+              "RelativeDocumentMoniker": "app\\Http\\Controllers\\AuthController.php",
+              "ToolTip": "C:\\xampp\\htdocs\\project2\\app\\Http\\Controllers\\AuthController.php",
+              "RelativeToolTip": "app\\Http\\Controllers\\AuthController.php",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAAwGYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-02T14:47:23.598Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AuthenticationException.php",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Exceptions\\AuthenticationException.php",
+              "RelativeDocumentMoniker": "app\\Exceptions\\AuthenticationException.php",
+              "ToolTip": "C:\\xampp\\htdocs\\project2\\app\\Exceptions\\AuthenticationException.php",
+              "RelativeToolTip": "app\\Exceptions\\AuthenticationException.php",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-02T14:46:47.601Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "User.php",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Models\\User.php",
+              "RelativeDocumentMoniker": "app\\Models\\User.php",
+              "ToolTip": "C:\\xampp\\htdocs\\project2\\app\\Models\\User.php",
+              "RelativeToolTip": "app\\Models\\User.php",
+              "ViewState": "AQIAABQAAAAAAAAAAAAAABwAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-02T14:10:59.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "LoginRequest.php",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Http\\Requests\\LoginRequest.php",
+              "RelativeDocumentMoniker": "app\\Http\\Requests\\LoginRequest.php",
+              "ToolTip": "C:\\xampp\\htdocs\\project2\\app\\Http\\Requests\\LoginRequest.php",
+              "RelativeToolTip": "app\\Http\\Requests\\LoginRequest.php",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAwB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-02T14:49:37.87Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AuthService.php",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Services\\AuthService.php",
+              "RelativeDocumentMoniker": "app\\Services\\AuthService.php",
+              "ToolTip": "C:\\xampp\\htdocs\\project2\\app\\Services\\AuthService.php",
+              "RelativeToolTip": "app\\Services\\AuthService.php",
+              "ViewState": "AQIAACwAAAAAAAAAAAAAwEEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-02T14:44:59.129Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "UserGender.php",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Enums\\UserGender.php",
+              "RelativeDocumentMoniker": "app\\Enums\\UserGender.php",
+              "ToolTip": "C:\\xampp\\htdocs\\project2\\app\\Enums\\UserGender.php",
+              "RelativeToolTip": "app\\Enums\\UserGender.php",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-02T14:13:41.421Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "UserRole.php",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Enums\\UserRole.php",
+              "RelativeDocumentMoniker": "app\\Enums\\UserRole.php",
+              "ToolTip": "C:\\xampp\\htdocs\\project2\\app\\Enums\\UserRole.php",
+              "RelativeToolTip": "app\\Enums\\UserRole.php",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-02T14:13:22.342Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "DatabaseSeeder.php",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\database\\seeders\\DatabaseSeeder.php",
+              "RelativeDocumentMoniker": "database\\seeders\\DatabaseSeeder.php",
+              "ToolTip": "C:\\xampp\\htdocs\\project2\\database\\seeders\\DatabaseSeeder.php",
+              "RelativeToolTip": "database\\seeders\\DatabaseSeeder.php",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-02T14:09:48.783Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "UserSeeder.php",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\database\\seeders\\UserSeeder.php",
+              "RelativeDocumentMoniker": "database\\seeders\\UserSeeder.php",
+              "ToolTip": "C:\\xampp\\htdocs\\project2\\database\\seeders\\UserSeeder.php",
+              "RelativeToolTip": "database\\seeders\\UserSeeder.php",
+              "ViewState": "AQIAABYAAAAAAAAAAAAAwCsAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-02T14:07:49.424Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "0001_01_01_000000_create_users_table.php",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\database\\migrations\\0001_01_01_000000_create_users_table.php",
+              "RelativeDocumentMoniker": "database\\migrations\\0001_01_01_000000_create_users_table.php",
+              "ToolTip": "C:\\xampp\\htdocs\\project2\\database\\migrations\\0001_01_01_000000_create_users_table.php",
+              "RelativeToolTip": "database\\migrations\\0001_01_01_000000_create_users_table.php",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAAwDIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-02T14:06:22.616Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
