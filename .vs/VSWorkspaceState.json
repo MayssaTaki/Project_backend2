@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\Exceptions",
     "\\app\\Http",
-    "\\app\\Http\\Controllers",
     "\\app\\Http\\Requests",
     "\\app\\Models",
     "\\app\\Repositories",
     "\\app\\Services",
+    "\\database",
+    "\\database\\migrations",
     "\\routes"
   ],
-  "SelectedNode": "\\app\\Services\\UserService.php",
+  "SelectedNode": "\\database\\migrations\\2025_04_30_193611_create_categories_table.php",
   "PreviewInSolutionExplorer": false
 }

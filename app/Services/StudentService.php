@@ -10,6 +10,8 @@ use App\Exceptions\StudentRegistrationException;
 use App\Repositories\UserRepository ;
 use App\Services\UserService ;
 use App\Services\TransactionService;
+use App\Repositories\Contracts\StudentRepositoryInterface;
+use App\Repositories\Contracts\UserRepositoryInterface;
 
 
 
@@ -23,7 +25,7 @@ class StudentService
 
 
 
-    public function __construct(StudentRepository $studentRepository, UserRepository  $userRepository,UserService  $userService,
+    public function __construct(StudentRepositoryInterface $studentRepository, UserRepositoryInterface  $userRepository,UserService  $userService,
     TransactionService  $transactionService  )
     {
         $this->studentRepository = $studentRepository;

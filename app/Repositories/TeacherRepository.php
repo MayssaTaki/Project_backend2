@@ -4,11 +4,16 @@ namespace App\Repositories;
 
 use App\Models\Teacher;
 use App\Models\User;
+use App\Repositories\Contracts\TeacherRepositoryInterface;
+use App\Exceptions\TeacherRegistrationException;
 
-class TeacherRepository 
+class TeacherRepository implements TeacherRepositoryInterface
+
 {
-   use App\Exceptions\TeacherRegistrationException;
-
+    public function create(array $data): Teacher
+    {
+        return Teacher::create($data);
+    }
 
     public function update(Teacher $teacher, array $data): Teacher
 {

@@ -5,11 +5,14 @@ use App\Repositories\CategoryRepository;
 use Illuminate\Http\JsonResponse;
 use Exception;
 use App\Models\Category;
+use App\Repositories\Contracts\CategoryRepositoryInterface;
+
+
 class CategoryService
 {
     protected $categoryRepository;
 
-    public function __construct(CategoryRepository $categoryRepository)
+    public function __construct(CategoryRepositoryInterface $categoryRepository)
     {
         $this->categoryRepository = $categoryRepository;
     }

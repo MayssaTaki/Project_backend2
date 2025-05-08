@@ -3,12 +3,13 @@ namespace App\Services;
 
 use App\Repositories\WalletRepository;
 use App\Models\Wallet;
+use App\Repositories\Contracts\WalletRepositoryInterface;
 
 class WalletService
 {
     protected $repo;
 
-    public function __construct(WalletRepository $repo)
+    public function __construct(WalletRepositoryInterface $repo)
     {
         $this->repo = $repo;
     }

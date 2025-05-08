@@ -15,6 +15,9 @@ use Exception;
 use App\Exceptions\TeacherRegistrationException;
 use App\Repositories\UserRepository ;
 use App\Services\UserService ;
+use App\Repositories\Contracts\TeacherRepositoryInterface;
+use App\Repositories\Contracts\UserRepositoryInterface;
+
 
 
 
@@ -27,7 +30,7 @@ class TeacherService
 
 
 
-    public function __construct(TeacherRepository $teacherRepository, UserRepository  $userRepository,UserService  $userService,
+    public function __construct(TeacherRepositoryInterface $teacherRepository, UserRepositoryInterface  $userRepository,UserService  $userService,
     TransactionService  $transactionService )
     {
         $this->teacherRepository = $teacherRepository;

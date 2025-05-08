@@ -11,12 +11,13 @@ use App\Http\Requests\UserRegisterRequest;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Illuminate\Support\Arr;
+use App\Repositories\Contracts\UserRepositoryInterface;
+
 
 class UserService
 {
-    protected $userRepository;
 
-    public function __construct(UserRepository $userRepository)
+    public function __construct(UserRepositoryInterface $userRepository)
     {
         $this->userRepository = $userRepository;
     }

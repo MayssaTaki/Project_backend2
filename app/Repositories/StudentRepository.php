@@ -4,8 +4,10 @@ namespace App\Repositories;
 
 use App\Models\Student;
 use App\Models\User;
+use App\Repositories\Contracts\StudentRepositoryInterface;
 
-class StudentRepository 
+class StudentRepository implements StudentRepositoryInterface
+
 {
     public function create(array $data): Student
     {
