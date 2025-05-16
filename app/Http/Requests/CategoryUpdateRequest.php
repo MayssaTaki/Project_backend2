@@ -16,8 +16,8 @@ class CategoryUpdateRequest extends FormRequest
     {
 
         return [
-            'name' => 'nullable|string|max:255|unique:categories,name,' . $this->route('id'),
-        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'name' => 'sometimes|string|max:255|unique:categories,name,' . $this->route('id'),
+        'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
         
     }

@@ -35,7 +35,7 @@ public function search(string $query)
         return Teacher::where('first_name', 'LIKE', "%{$query}%")
             ->orWhere('last_name', 'LIKE', "%{$query}%")
             ->orWhere('specialization', 'LIKE', "%{$query}%")
-            ->get();
+            ->paginate(10);
     }
 
     public function countTeachers(): int

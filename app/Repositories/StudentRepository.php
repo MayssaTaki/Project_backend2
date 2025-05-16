@@ -26,7 +26,7 @@ public function search(string $query)
     {
         return Student::where('first_name', 'LIKE', "%{$query}%")
             ->orWhere('last_name', 'LIKE', "%{$query}%")
-            ->get();
+            ->paginate(10);
     }
 
     public function update(Student $student, array $data): Student

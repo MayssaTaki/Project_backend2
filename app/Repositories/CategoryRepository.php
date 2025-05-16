@@ -38,6 +38,6 @@ class CategoryRepository implements CategoryRepositoryInterface
     public function search(string $query)
     {
         return Category::where('name', 'LIKE', "%{$query}%")
-            ->get();
+            ->paginate(10);;
     }
 }
