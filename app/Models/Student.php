@@ -49,6 +49,15 @@ class Student extends Model
             $model->wallet()->create(['balance' => 0]);
         });
     }
+
+    public function getImageAttribute()
+{
+    if ($this->profile_image) {
+        return asset('storage/' . $this->profile_image);
+    }
+    return asset('images/default-user-image.webp');
+}
+
         
 
    

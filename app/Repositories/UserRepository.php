@@ -4,10 +4,11 @@ namespace App\Repositories;
 use Exception;
 use Illuminate\Support\Facades\Hash;
 use App\Exceptions\UserRegistrationException;
+use App\Repositories\Contracts\UserRepositoryInterface;
 
 use App\Models\User;
 
-class UserRepository
+class UserRepository implements UserRepositoryInterface
 {
 
 

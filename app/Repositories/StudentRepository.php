@@ -4,8 +4,10 @@ namespace App\Repositories;
 
 use App\Models\Student;
 use App\Models\User;
+use App\Repositories\Contracts\StudentRepositoryInterface;
 
-class StudentRepository 
+class StudentRepository implements StudentRepositoryInterface
+
 {
     public function create(array $data): Student
     {
@@ -24,7 +26,7 @@ public function search(string $query)
     {
         return Student::where('first_name', 'LIKE', "%{$query}%")
             ->orWhere('last_name', 'LIKE', "%{$query}%")
-            ->get();
+            ->paginate(10);
     }
 
     public function update(Student $student, array $data): Student

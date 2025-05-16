@@ -2,8 +2,9 @@
 namespace App\Repositories;
 
 use App\Models\Category;
+use App\Repositories\Contracts\CategoryRepositoryInterface;
 
-class CategoryRepository
+class CategoryRepository implements CategoryRepositoryInterface
 {
     public function create(array $data): Category
     {
@@ -37,6 +38,6 @@ class CategoryRepository
     public function search(string $query)
     {
         return Category::where('name', 'LIKE', "%{$query}%")
-            ->get();
+            ->paginate(10);;
     }
 }

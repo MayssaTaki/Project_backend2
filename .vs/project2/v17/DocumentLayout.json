@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\xampp\\htdocs\\project2\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\project2\\database\\migrations\\2025_04_30_193611_create_categories_table.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:database\\migrations\\2025_04_30_193611_create_categories_table.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\xampp\\htdocs\\project2\\app\\Services\\UserService.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Services\\UserService.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
@@ -106,11 +110,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "2025_04_30_193611_create_categories_table.php",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\database\\migrations\\2025_04_30_193611_create_categories_table.php",
+              "RelativeDocumentMoniker": "database\\migrations\\2025_04_30_193611_create_categories_table.php",
+              "ToolTip": "C:\\xampp\\htdocs\\project2\\database\\migrations\\2025_04_30_193611_create_categories_table.php",
+              "RelativeToolTip": "database\\migrations\\2025_04_30_193611_create_categories_table.php",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-05T21:27:42.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "StudentRegisterRequest.php",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Http\\Requests\\StudentRegisterRequest.php",
               "RelativeDocumentMoniker": "app\\Http\\Requests\\StudentRegisterRequest.php",
@@ -118,12 +135,11 @@
               "RelativeToolTip": "app\\Http\\Requests\\StudentRegisterRequest.php",
               "ViewState": "AQIAABgAAAAAAAAAAAAAACcAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-05-03T17:58:44.186Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-03T17:58:44.186Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "TeacherRegisterRequest.php",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Http\\Requests\\TeacherRegisterRequest.php",
               "RelativeDocumentMoniker": "app\\Http\\Requests\\TeacherRegisterRequest.php",
@@ -131,12 +147,11 @@
               "RelativeToolTip": "app\\Http\\Requests\\TeacherRegisterRequest.php",
               "ViewState": "AQIAABQAAAAAAAAAAAAgwDQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-05-03T17:41:15.305Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-03T17:41:15.305Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "UserRegisterRequest.php",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Http\\Requests\\UserRegisterRequest.php",
               "RelativeDocumentMoniker": "app\\Http\\Requests\\UserRegisterRequest.php",
@@ -144,12 +159,11 @@
               "RelativeToolTip": "app\\Http\\Requests\\UserRegisterRequest.php",
               "ViewState": "AQIAAAUAAAAAAAAAAAAgwCUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-05-03T17:39:34.558Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-03T17:39:34.558Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "TeacherController.php",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Http\\Controllers\\TeacherController.php",
               "RelativeDocumentMoniker": "app\\Http\\Controllers\\TeacherController.php",
@@ -157,12 +171,11 @@
               "RelativeToolTip": "app\\Http\\Controllers\\TeacherController.php",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-05-03T17:33:22.384Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-03T17:33:22.384Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "UserService.php",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Services\\UserService.php",
               "RelativeDocumentMoniker": "app\\Services\\UserService.php",
@@ -175,7 +188,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "UserController.php",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Http\\Controllers\\UserController.php",
               "RelativeDocumentMoniker": "app\\Http\\Controllers\\UserController.php",
@@ -183,12 +196,11 @@
               "RelativeToolTip": "app\\Http\\Controllers\\UserController.php",
               "ViewState": "AQIAABYAAAAAAAAAAAAAAFwAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-05-03T17:32:51.883Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-03T17:32:51.883Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "TeacherRepository.php",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Repositories\\TeacherRepository.php",
               "RelativeDocumentMoniker": "app\\Repositories\\TeacherRepository.php",
@@ -196,12 +208,11 @@
               "RelativeToolTip": "app\\Repositories\\TeacherRepository.php",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-05-03T17:28:28.331Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-03T17:28:28.331Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "api.php",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\routes\\api.php",
               "RelativeDocumentMoniker": "routes\\api.php",
@@ -209,12 +220,11 @@
               "RelativeToolTip": "routes\\api.php",
               "ViewState": "AQIAADkAAAAAAAAAAAAAADwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-05-02T14:50:12.862Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-02T14:50:12.862Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "TeacherRegistrationException.php",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Exceptions\\TeacherRegistrationException.php",
               "RelativeDocumentMoniker": "app\\Exceptions\\TeacherRegistrationException.php",
@@ -222,12 +232,11 @@
               "RelativeToolTip": "app\\Exceptions\\TeacherRegistrationException.php",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-05-03T17:26:19.18Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-03T17:26:19.18Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "UserRepository.php",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Repositories\\UserRepository.php",
               "RelativeDocumentMoniker": "app\\Repositories\\UserRepository.php",
@@ -235,12 +244,11 @@
               "RelativeToolTip": "app\\Repositories\\UserRepository.php",
               "ViewState": "AQIAACAAAAAAAAAAAAAAACAAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-05-02T14:16:20.777Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-02T14:16:20.777Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "UserRegistrationException.php",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Exceptions\\UserRegistrationException.php",
               "RelativeDocumentMoniker": "app\\Exceptions\\UserRegistrationException.php",
@@ -248,12 +256,11 @@
               "RelativeToolTip": "app\\Exceptions\\UserRegistrationException.php",
               "ViewState": "AQIAAAQAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-05-03T16:29:56.434Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-03T16:29:56.434Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "TeacherService.php",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Services\\TeacherService.php",
               "RelativeDocumentMoniker": "app\\Services\\TeacherService.php",
@@ -261,12 +268,11 @@
               "RelativeToolTip": "app\\Services\\TeacherService.php",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-05-03T16:26:13.245Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-03T16:26:13.245Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Student.php",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Models\\Student.php",
               "RelativeDocumentMoniker": "app\\Models\\Student.php",
@@ -274,12 +280,11 @@
               "RelativeToolTip": "app\\Models\\Student.php",
               "ViewState": "AQIAABwAAAAAAAAAAAAAACMAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-05-03T15:46:20.996Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-03T15:46:20.996Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "TransactionService.php",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Services\\TransactionService.php",
               "RelativeDocumentMoniker": "app\\Services\\TransactionService.php",
@@ -287,12 +292,11 @@
               "RelativeToolTip": "app\\Services\\TransactionService.php",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-05-03T14:41:12.478Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-03T14:41:12.478Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "AuthController.php",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Http\\Controllers\\AuthController.php",
               "RelativeDocumentMoniker": "app\\Http\\Controllers\\AuthController.php",
@@ -304,7 +308,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "AuthenticationException.php",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Exceptions\\AuthenticationException.php",
               "RelativeDocumentMoniker": "app\\Exceptions\\AuthenticationException.php",
@@ -316,7 +320,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "User.php",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Models\\User.php",
               "RelativeDocumentMoniker": "app\\Models\\User.php",
@@ -324,12 +328,11 @@
               "RelativeToolTip": "app\\Models\\User.php",
               "ViewState": "AQIAABQAAAAAAAAAAAAAABwAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-05-02T14:10:59.693Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-02T14:10:59.693Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "LoginRequest.php",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Http\\Requests\\LoginRequest.php",
               "RelativeDocumentMoniker": "app\\Http\\Requests\\LoginRequest.php",
@@ -341,7 +344,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "AuthService.php",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Services\\AuthService.php",
               "RelativeDocumentMoniker": "app\\Services\\AuthService.php",
@@ -353,7 +356,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "UserGender.php",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Enums\\UserGender.php",
               "RelativeDocumentMoniker": "app\\Enums\\UserGender.php",
@@ -365,7 +368,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "UserRole.php",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\app\\Enums\\UserRole.php",
               "RelativeDocumentMoniker": "app\\Enums\\UserRole.php",
@@ -377,7 +380,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "DatabaseSeeder.php",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\database\\seeders\\DatabaseSeeder.php",
               "RelativeDocumentMoniker": "database\\seeders\\DatabaseSeeder.php",
@@ -389,7 +392,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "UserSeeder.php",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\database\\seeders\\UserSeeder.php",
               "RelativeDocumentMoniker": "database\\seeders\\UserSeeder.php",
@@ -401,7 +404,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "0001_01_01_000000_create_users_table.php",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project2\\database\\migrations\\0001_01_01_000000_create_users_table.php",
               "RelativeDocumentMoniker": "database\\migrations\\0001_01_01_000000_create_users_table.php",

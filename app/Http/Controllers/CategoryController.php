@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Services\CategoryService;
 use App\Http\Requests\CategoryStoreRequest;
 use App\Http\Requests\CategoryUpdateRequest;
+use App\Http\Resources\CategoryResource;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
@@ -73,7 +74,7 @@ class CategoryController extends Controller
         return response()->json([
             'status' => 'success',
             'message' => 'تم جلب جميع الفئات بنجاح.',
-            'data' => $categories,
+            'data' => CategoryResource::collection($categories),
         ], 200);
     }
 

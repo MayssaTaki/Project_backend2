@@ -7,6 +7,11 @@ use App\Repositories\StudentRepository;
 use App\Repositories\CategoryRepository;
 use App\Repositories\WalletRepository;
 use Illuminate\Support\Facades\Gate;
+use App\Repositories\Contracts\StudentRepositoryInterface;
+use App\Repositories\Contracts\TeacherRepositoryInterface;
+use App\Repositories\Contracts\UserRepositoryInterface;
+use App\Repositories\Contracts\WalletRepositoryInterface;
+use App\Repositories\Contracts\CategoryRepositoryInterface;
 
 
 
@@ -21,21 +26,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(UserRepository::class, function ($app) {
-            return new UserRepository();
-        });
-        $this->app->bind(TeacherRepository::class, function ($app) {
-            return new TeacherRepository();
-        });
-        $this->app->bind(StudentRepository::class, function ($app) {
-            return new StudentRepository();
-        });
-        $this->app->bind(WalletRepository::class, function ($app) {
-            return new WalletRepository();
-        });
-        $this->app->bind(CategoryRepository::class, function ($app) {
-            return new CategoryRepository();
-        });
+        $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
+        $this->app->bind(StudentRepositoryInterface::class, StudentRepository::class);
+        $this->app->bind(TeacherRepositoryInterface::class, TeacherRepository::class);
+        $this->app->bind(CategoryRepositoryInterface::class, CategoryRepository::class);
+        $this->app->bind(WalletRepositoryInterface::class, WalletRepository::class);
+
         $this->app->bind(\App\Services\TransactionService::class);
       
 

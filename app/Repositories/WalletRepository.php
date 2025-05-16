@@ -2,8 +2,10 @@
 namespace App\Repositories;
 
 use App\Models\Wallet;
+use App\Repositories\Contracts\WalletRepositoryInterface;
 
-class WalletRepository
+
+class WalletRepository implements WalletRepositoryInterface
 {
     public function getByModel($model): Wallet
     {

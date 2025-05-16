@@ -22,10 +22,6 @@ Route::middleware(['reject.banned'])->group(function () {
 });
 
 
-Route::middleware([ 'can:admin-actions'])->prefix('admin')->group(function () {
-    Route::post('/teachers/{id}/approve', [TeacherController::class, 'approve']);
-    Route::post('/teachers/{id}/reject', [TeacherController::class, 'reject']);
-});
 
 
 Route::get('/count/approved', [TeacherController::class, 'approved']);
@@ -38,10 +34,8 @@ Route::get('/count/active', [StudentController::class, 'active']);
 
 
 
-Route::post('/categories', [CategoryController::class, 'store']);
 Route::get('/categories/count', [CategoryController::class, 'countCategories']);
 Route::get('/categories', [CategoryController::class, 'getAll']);
-Route::put('/categories/{id}', [CategoryController::class, 'update']);
 Route::get('/categories/search', [CategoryController::class, 'search']);
 
 
@@ -79,24 +73,9 @@ Route::middleware(['reject.banned'])->prefix('wallet')->group(function () {
 Route::get('/teacher/balance', [WalletController::class, 'teacherBalance']);
 
 
-Route::get('/users', [UserController::class, 'getAllUsers']);
-Route::get('/employees', [UserController::class, 'getAllEmployees']);
-Route::get('/trainers', [UserController::class, 'getAllTrainers']);
-Route::get('/drivers', [UserController::class, 'getAllDrivers']);
 
-Route::get('/search-users', [UserController::class, 'search']);
-Route::get('/search-employees', [UserController::class, 'searchEmployee']);
-Route::get('/search-trainers', [UserController::class, 'searchTrainer']);
-Route::get('/search-drivers', [UserController::class, 'searchDriver']);
 
-Route::delete('/users/{id}', [UserController::class, 'deleteUser']);
-Route::delete('/drivers/{id}', [UserController::class, 'deleteDriver']);
-Route::delete('/trainers/{id}', [UserController::class, 'deleteTrainer']);
-Route::delete('/employees/{id}', [UserController::class, 'deleteEmployee']);
 
-Route::get('/user-counts', [UserController::class, 'getUserCounts']);
-Route::get('/employee-counts', [UserController::class, 'getEmployeeCounts']);
-Route::get('/trainer-counts', [UserController::class, 'getTrainerCounts']);
-Route::get('/driver-counts', [UserController::class, 'getDriverCounts']);
+
 
 Route::put('/users/{id}/profile', [UserController::class, 'updateUserProfile']);

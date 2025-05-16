@@ -22,7 +22,7 @@ class CategoryStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:255', 
+            'name' => 'required|string|max:255|unique:categories,name', 
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 
         ];
@@ -30,6 +30,7 @@ class CategoryStoreRequest extends FormRequest
     public function messages()
 {
     return [
+        'name.unique'=>'يجب ان يكون اسم الفئة غير مكرر',
         'name.required' => 'الاسم مطلوب.',
         'name.string' => 'الاسم يجب أن يكون نصًا.',
         'name.max' => 'الاسم يجب أن يكون أقل من 255 حرفًا.',
