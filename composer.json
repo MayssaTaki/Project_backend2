@@ -10,6 +10,7 @@
         "jeroennoten/laravel-adminlte": "*",
         "laravel/framework": "^11.31",
         "laravel/jetstream": "^5.3",
+        "laravel/pennant": "*",
         "laravel/tinker": "^2.9",
         "laravel/ui": "*",
         "predis/predis": "^2.3",
