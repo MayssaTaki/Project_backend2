@@ -4,6 +4,8 @@ namespace App\Services;
 use App\Repositories\CategoryRepository;
 use Illuminate\Http\JsonResponse;
 use Exception;
+use Illuminate\Support\Arr;
+
 use App\Models\Category;
 use App\Repositories\Contracts\CategoryRepositoryInterface;
 
@@ -52,11 +54,12 @@ class CategoryService
         return $this->categoryRepository->getAll();
     }
 
-    public function updateCategory($id, array $data): Category
+public function updateCategory($id, array $data): Category
 {
-    $category = $this->categoryRepository->findById($id);
+    $category = Category::findOrFail($id);
 
-    if (isset($data['image'])) {
+    // التعامل مع الصورة إن وُجدت
+    if (isset($data['image']) && $data['image'] instanceof \Illuminate\Http\UploadedFile) {
         if ($category->image && file_exists(public_path($category->image))) {
             unlink(public_path($category->image));
         }
@@ -66,11 +69,12 @@ class CategoryService
         $data['image'] = 'uploads/categories/' . $imageName;
     }
 
-    $category->update($data);
-    return $category;
+    // تحديث مباشرة بأي بيانات مرسلة (سواء تغيرت أم لا)
+    $category->update(Arr::only($data, ['name', 'image']));
+
+    return $category->fresh();
 }
 
-    
 
     public function search(string $query)
 {

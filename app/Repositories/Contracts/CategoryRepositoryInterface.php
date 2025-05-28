@@ -7,6 +7,6 @@ interface CategoryRepositoryInterface{
     public function countCategories(): int;
     public function getAll();
     public function findById($id): Category;
-    public function update($id, array $data): Category;
-    public function search(string $query);
+ public function update($category, array $data): Category;
+     public function search(string $query);
 }

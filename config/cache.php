@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('CACHE_DRIVER', 'redis'),
+'default' => env('FEATURE_REDIS', false) ? 'redis' : 'file',
 
     /*
     |--------------------------------------------------------------------------
