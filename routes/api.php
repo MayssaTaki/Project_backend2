@@ -70,7 +70,9 @@ Route::middleware(['reject.banned'])->prefix('wallet')->group(function () {
 Route::get('/teacher/balance', [WalletController::class, 'teacherBalance']);
 
 Route::post('/courses/add', [CourseController::class, 'addCourse']);
-// Route::post('/courses/add', [CourseController::class, 'addCourse'])
-//     ->middleware('auth:teacher');
+
+Route::middleware(['teacher'])->group(function () {
+    Route::post('/courses/add', [CourseController::class, 'addCourse']);
+});
 
 Route::put('/users/{id}/profile', [UserController::class, 'updateUserProfile']);

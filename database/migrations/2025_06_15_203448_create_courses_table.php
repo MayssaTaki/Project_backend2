@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('teacher_id')
+            $table->foreignId('user_id')
                   ->constrained()
                   ->onDelete('cascade');  // Delete course if user/teacher is deleted
             
@@ -28,7 +28,7 @@ return new class extends Migration
             $table->timestamps();
             
             // Optional: Indexes for better performance
-            $table->index('teacher_id');
+            $table->index('user_id');
             $table->index('category_id');
         });
     }
