@@ -12,6 +12,9 @@ use Illuminate\Http\Request;
 
 use App\Services\TeacherService;
 use Illuminate\Http\JsonResponse;
+use App\Exceptions\TeacherRegistrationException;
+use App\Exceptions\UserRegistrationException;
+use Exception;
 
 class TeacherController extends Controller
 {

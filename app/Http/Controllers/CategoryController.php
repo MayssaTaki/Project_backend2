@@ -9,6 +9,8 @@ use App\Http\Resources\CategoryResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Validator;
+use Exception;
+
 class CategoryController extends Controller
 {
     protected $categoryService;

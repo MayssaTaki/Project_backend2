@@ -13,5 +13,5 @@ interface TeacherRepositoryInterface{
     public function getApprovedTeachers();
     public function getRejectedTeachers();
     public function getPendingTeachers();
-
+    public function create(array $data): Teacher;
 }

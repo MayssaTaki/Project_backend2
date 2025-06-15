@@ -14,6 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
             'reject.banned' => \App\Http\Middleware\RejectBannedStudents::class,
+            'teacher' => \App\Http\Middleware\EnsureTeacherRole::class,
         ]);
     })
     

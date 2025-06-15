@@ -13,10 +13,13 @@ use Illuminate\Http\Request;
 
 use App\Services\StudentService;
 use Illuminate\Http\JsonResponse;
+use App\Exceptions\StudentRegistrationException;
+use App\Exceptions\UserRegistrationException;
+use Exception;
 
 class StudentController extends Controller
 {
-    protected StudentService $teacherService;
+    protected StudentService $studentService;
 
     public function __construct(StudentService $studentService)
     {
@@ -34,12 +37,16 @@ class StudentController extends Controller
                 'message' => 'تم تسجيل الطالب والمستخدم بنجاح.',
                 'data' => $student
             ], 201);
-        } catch (StudentRegistrationException | UserRegistrationException $e) {
+        }
+
+        catch (StudentRegistrationException | UserRegistrationException $e) {
             return response()->json([
                 'status' => 'error',
                 'message' => $e->getMessage(),
             ], 500);
-        } catch (Exception $e) {
+        }
+         
+        catch (Exception $e) {
             return response()->json([
                 'status' => 'error',
                 'message' => 'حدث خطأ غير متوقع.',

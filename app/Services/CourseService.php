@@ -19,7 +19,7 @@ class CourseService implements CourseServiceInterface
     {
         try 
         {
-            // $data['teacher_id'] = Auth::guard('teacher')->id();
+            $data['user_id'] = Auth::id();
             $course = $this->CourseRepository->create($data);
             return response()->json([
                 'status' => 'success',

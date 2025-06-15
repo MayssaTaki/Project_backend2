@@ -8,7 +8,6 @@ class StoreCourseRequest  extends FormRequest
 {
     public function authorize()
     {
-        // return auth('teacher')->check();
         return true;
     }
 
@@ -16,7 +15,6 @@ class StoreCourseRequest  extends FormRequest
     {
         return [
             'category_id' => 'required|exists:categories,id',
-            'teacher_id' => 'required|exists:teachers,id',
             'name' => 'required|string|max:255',
             'price' => 'required|numeric',
             'description' => 'required|string|max:1000'

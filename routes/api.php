@@ -8,11 +8,12 @@ use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\WalletController;
+use App\Http\Controllers\CourseController;
 
 
 
 
-Route::middleware([ 'reject.banned'])->group(function () {
+Route::middleware(['reject.banned'])->group(function () {
     Route::get('/students/{id}/status', [StudentController::class, 'checkStatus']);
 });
 
@@ -31,13 +32,9 @@ Route::get('/count/pened', [TeacherController::class, 'pened']);
 Route::get('/count/block', [StudentController::class, 'block']);
 Route::get('/count/active', [StudentController::class, 'active']);
 
-
-
-
 Route::get('/categories/count', [CategoryController::class, 'countCategories']);
 Route::get('/categories', [CategoryController::class, 'getAll']);
 Route::get('/categories/search', [CategoryController::class, 'search']);
-
 
 Route::get('/teachers/count', [TeacherController::class, 'countTeachers']);
 Route::get('/students/count', [StudentController::class, 'countStudents']);
@@ -72,10 +69,10 @@ Route::middleware(['reject.banned'])->prefix('wallet')->group(function () {
 });
 Route::get('/teacher/balance', [WalletController::class, 'teacherBalance']);
 
+Route::post('/courses/add', [CourseController::class, 'addCourse']);
 
-
-
-
-
+Route::middleware(['teacher'])->group(function () {
+    Route::post('/courses/add', [CourseController::class, 'addCourse']);
+});
 
 Route::put('/users/{id}/profile', [UserController::class, 'updateUserProfile']);
