@@ -8,11 +8,8 @@ use App\Services\StudentService;
 
 use App\Models\Category;
 use App\Http\Requests\CategoryStoreRequest;
-use App\Http\Requests\CategoryUpdateRequest;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\Validator;
 class AdminController extends Controller
 {
     protected $categoryService;

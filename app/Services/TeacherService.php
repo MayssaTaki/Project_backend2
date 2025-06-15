@@ -1,13 +1,10 @@
 <?php
 
 namespace App\Services;
-use App\Repositories\TeacherRepository;
 use App\Services\TransactionService;
 use App\Exceptions\TeacherUpdateException;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
 use App\Models\Teacher;
-use Illuminate\Support\Facades\Storage;
 use App\Events\TeacherApproved;
 use App\Events\TeacherRejected;
 use App\Events\TeacherRegistered;
@@ -23,7 +20,7 @@ use App\Repositories\Contracts\UserRepositoryInterface;
 
 class TeacherService
 {
-    protected TeacherRepository $teacherRepository;
+    protected TeacherRepositoryInterface $teacherRepository;
     protected UserRepository $userRepository;
     protected UserService $userService;
     protected TransactionService $transactionService;

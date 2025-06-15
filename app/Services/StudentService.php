@@ -4,7 +4,6 @@ namespace App\Services;
 use App\Repositories\StudentRepository;
 
 use App\Models\Student;
-use Illuminate\Support\Facades\Storage;
 use Exception;
 use App\Exceptions\StudentRegistrationException;
 use App\Repositories\UserRepository ;
@@ -12,13 +11,12 @@ use App\Services\UserService ;
 use App\Services\TransactionService;
 use App\Repositories\Contracts\StudentRepositoryInterface;
 use App\Repositories\Contracts\UserRepositoryInterface;
-
-
+use Illuminate\Support\Facades\Hash;
 
 
 class StudentService
 {
-    protected StudentRepository $StudentRepository;
+    protected StudentRepository $studentRepository;
     protected UserRepository $userRepository;
     protected UserService $userService;
     protected TransactionService $transactionService;
@@ -102,14 +100,14 @@ public function update(Student $student, array $data): Student
 
                 if (!empty($userData)) {
                     if (!$this->userRepository->update($user, $userData)) {
-                        throw new StudentUpdateException('فشل في تحديث بيانات المستخدم.');
+                        throw new Exception('فشل في تحديث بيانات المستخدم.');
                     }
                 }
 
                 return $this->studentRepository->update($student, $data);
             });
-        } catch (\Exception $e) {
-            throw new StudentUpdateException('فشل التحديث: ' . $e->getMessage());
+        } catch (Exception $e) {
+            throw new Exception('فشل التحديث: ' . $e->getMessage());
         }
     }
 
