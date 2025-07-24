@@ -11,4 +11,11 @@ class CourseRepository implements CourseRepositoryInterface
     {
         return Course::create($data);
     }
+
+    public function update(int $id, array $data): Course
+    {
+        $course = Course::findOrFail($id);
+        $course->update($data);
+        return $course->fresh(); // Return fresh instance from database
+    }
 }

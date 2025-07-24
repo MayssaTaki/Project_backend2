@@ -37,4 +37,28 @@ class CourseService implements CourseServiceInterface
         }
 
     }
+
+    public function updateCourse(array $data)
+    {
+        try 
+        {
+            $courseId = $data['course_id'];
+            unset($data['course_id']); // Remove course_id from update data
+            
+            $course = $this->CourseRepository->update($courseId, $data);
+            
+            return response()->json([
+                'status' => 'success',
+                'message' => 'تم تحديث الكورس بنجاح.',
+                'data' => $course
+            ]);
+        }
+        catch(Exception $ex)
+        {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'فشل في تحديث الكورس: ' . $ex->getMessage()
+            ], 500);
+        }
+    }
 }

@@ -12,6 +12,6 @@ class Course extends Model
         'name',
         'price',
         'description',
-        'accepted' // status: null=pending, 1=accepted, 0=rejected
+        'accepted'
     ];
 }
