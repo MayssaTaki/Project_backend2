@@ -18,4 +18,10 @@ class CourseRepository implements CourseRepositoryInterface
         $course->update($data);
         return $course->fresh(); // Return fresh instance from database
     }
+
+    public function delete(int $id): void
+    {
+        $course = Course::findOrFail($id);
+        $course->delete();
+    }
 }

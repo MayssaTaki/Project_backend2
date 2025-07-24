@@ -61,4 +61,24 @@ class CourseService implements CourseServiceInterface
             ], 500);
         }
     }
+
+    public function deleteCourse(int $courseId)
+    {
+        try 
+        {            
+            $this->CourseRepository->delete($courseId);
+            
+            return response()->json([
+                'status' => 'success',
+                'message' => 'تم حذف الكورس بنجاح.'
+            ]);
+        }
+        catch(Exception $ex)
+        {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'فشل في حذف الكورس: ' . $ex->getMessage()
+            ], 500);
+        }
+    }
 }

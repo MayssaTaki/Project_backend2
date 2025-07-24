@@ -52,4 +52,22 @@ class CourseController extends Controller
             ], 500);
         }
     }
+
+    public function deleteCourse(int $courseId)
+    {
+        try {
+            $this->courseService->deleteCourse($courseId);
+            
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Course deleted successfully'
+            ]);
+            
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Failed to delete course: ' . $e->getMessage()
+            ], 500);
+        }
+    }
 }

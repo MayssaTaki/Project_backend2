@@ -7,4 +7,5 @@ interface CourseServiceInterface
 {
     public function createCourse(array $data);
     public function updateCourse(array $data);
+    public function deleteCourse(int $courseId);
 }
