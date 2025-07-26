@@ -69,10 +69,16 @@ Route::middleware(['reject.banned'])->prefix('wallet')->group(function () {
 });
 Route::get('/teacher/balance', [WalletController::class, 'teacherBalance']);
 
-Route::post('/courses/add', [CourseController::class, 'addCourse']);
-
 Route::middleware(['teacher'])->group(function () {
     Route::post('/courses/add', [CourseController::class, 'addCourse']);
+    Route::post('/courses/update', [CourseController::class, 'updateCourse']);
+
 });
 
 Route::put('/users/{id}/profile', [UserController::class, 'updateUserProfile']);
+Route::get('/courses/{courseId}', [CourseController::class, 'getCourseDetails']);
+Route::delete('/courses/{courseId}', [CourseController::class, 'deleteCourse']);
+Route::post('/courses/byTeacher', [CourseController::class, 'getCoursesByTeacherName']);
+Route::post('/courses/byCategory', [CourseController::class, 'getCoursesByCategoryName']);
+Route::post('/courses/byName', [CourseController::class, 'searchCoursesByName']);
+Route::get('/courses/byCategory/{categoryId}', [CourseController::class, 'getCoursesByCategoryId']);

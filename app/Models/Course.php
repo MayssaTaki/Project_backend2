@@ -12,6 +12,16 @@ class Course extends Model
         'name',
         'price',
         'description',
-        'accepted' // status: null=pending, 1=accepted, 0=rejected
+        'accepted'
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function teacher()
+    {
+        return $this->belongsTo(Teacher::class, 'user_id', 'user_id');
+    }
 }
