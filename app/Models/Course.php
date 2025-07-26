@@ -14,4 +14,14 @@ class Course extends Model
         'description',
         'accepted'
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function teacher()
+    {
+        return $this->belongsTo(Teacher::class, 'user_id', 'user_id');
+    }
 }

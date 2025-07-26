@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Services\Interfaces\CourseServiceInterface;
 use App\Http\Requests\StoreCourseRequest;
 use App\Http\Requests\UpdateCourseRequest;
+use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
@@ -69,5 +70,68 @@ class CourseController extends Controller
                 'message' => 'Failed to delete course: ' . $e->getMessage()
             ], 500);
         }
+    }
+
+    // app/Http/Controllers/CourseController.php
+    public function getCourseDetails($courseId)
+    {
+        $result = $this->courseService->getCourseDetails($courseId);
+        
+        return response()->json(
+            $result,
+            $result['status'] === 'error' ? 404 : 200
+        );
+    }
+
+    public function getCoursesByTeacherName(Request $request)
+    {
+        $request->validate([
+            'teacher_name' => 'required|string|min:2'
+        ]);
+        
+        $result = $this->courseService->getCoursesByTeacherName($request->teacher_name);
+        
+        return response()->json(
+            $result,
+            $result['status'] === 'error' ? 400 : 200
+        );
+    }
+
+    public function getCoursesByCategoryName(Request $request)
+    {
+        $request->validate([
+            'category_name' => 'required|string|min:2'
+        ]);
+        
+        $result = $this->courseService->getCoursesByCategoryName($request->category_name);
+        
+        return response()->json(
+            $result,
+            $result['status'] === 'error' ? 400 : 200
+        );
+    }
+
+    public function searchCoursesByName(Request $request)
+    {
+        $request->validate([
+            'course_name' => 'required|string|min:2'
+        ]);
+        
+        $result = $this->courseService->searchCoursesByName($request->course_name);
+        
+        return response()->json(
+            $result,
+            $result['status'] === 'error' ? 400 : 200
+        );
+    }
+    
+    public function getCoursesByCategoryId($categoryId)
+    {
+        $result = $this->courseService->getCoursesByCategoryId($categoryId);
+        
+        return response()->json(
+            $result,
+            $result['status'] === 'error' ? 404 : 200
+        );
     }
 }
