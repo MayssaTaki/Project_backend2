@@ -32,4 +32,9 @@ class Course extends Model
             ->withPivot('status', 'registered_at')
             ->withTimestamps();
     }
+
+    public function videos()
+    {
+        return $this->hasMany(CourseVideo::class);
+    }
 }
