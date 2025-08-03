@@ -79,7 +79,7 @@ class CourseController extends Controller
         
         return response()->json(
             $result,
-            $result['status'] === 'error' ? 404 : 200
+            $result['status'] === 'error' ? 400 : 200
         );
     }
 
@@ -131,7 +131,32 @@ class CourseController extends Controller
         
         return response()->json(
             $result,
-            $result['status'] === 'error' ? 404 : 200
+            $result['status'] === 'error' ? 400 : 200
+        );
+    }
+
+    public function registerForCourse(Request $request)
+    {
+        $request->validate([
+            'course_id' => 'required|integer|exists:courses,id'
+        ]);
+
+        $student = auth()->user()->student;
+        if (!$student) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'المستخدم ليس طالبًا'
+            ], 403);
+        }
+
+        $result = $this->courseService->registerStudentForCourse(
+            $request->course_id, 
+            $student->id
+        );
+
+        return response()->json(
+            $result,
+            $result['status'] === 'error' ? 400 : 200
         );
     }
 }

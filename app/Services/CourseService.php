@@ -5,14 +5,18 @@ use Exception;
 use App\Repositories\Contracts\CourseRepositoryInterface;
 use App\Services\Interfaces\CourseServiceInterface;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Course;
+use App\Models\Student;
 
 class CourseService implements CourseServiceInterface
 {
     protected CourseRepositoryInterface $CourseRepository;
+    protected WalletService $walletService;
 
-    public function __construct(CourseRepositoryInterface $CourseRepository)
+    public function __construct(CourseRepositoryInterface $CourseRepository, WalletService $walletService)
     {
         $this->CourseRepository = $CourseRepository;
+        $this->walletService = $walletService;
     }
 
     public function createCourse(array $data)
@@ -208,6 +212,52 @@ class CourseService implements CourseServiceInterface
             return [
                 'status' => 'error',
                 'message' => 'Failed to fetch courses by category ID: ' . $ex->getMessage()
+            ];
+        }
+    }
+
+    public function registerStudentForCourse(int $courseId, int $studentId)
+    {
+        try {
+            // Check if student is banned
+            $student = Student::findOrFail($studentId);
+            if ($student->isBanned()) {
+                throw new \Exception('Student is banned and cannot register for courses');
+            }
+
+            // Get course with teacher relationship
+            $course = Course::with('teacher')->where('id', $courseId)
+                        ->where('accepted', true)
+                        ->firstOrFail();
+
+            if($course == null) {
+                throw new \Exception('course does not exist');
+            }
+
+            // Check if already registered
+            if ($this->CourseRepository->isStudentRegistered($courseId, $studentId)) {
+                throw new \Exception('Student is already registered for this course');
+            }
+
+            $this->walletService->transferFromStudentToTeacher(
+                $studentId,
+                $course->teacher->id,
+                $course->price
+            );
+
+            // Create registration
+            $registration = $this->CourseRepository->registerStudent($courseId, $studentId);
+
+            return [
+                'status' => 'success',
+                'message' => 'تم تسجيل الطالب في الكورس بنجاح',
+                'registration' => $registration
+            ];
+
+        } catch (Exception $ex) {
+            return [
+                'status' => 'error',
+                'message' => 'فشل في التسجيل للكورس: ' . $ex->getMessage()
             ];
         }
     }

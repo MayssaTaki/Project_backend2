@@ -3,6 +3,8 @@
 namespace App\Repositories;
 
 use App\Models\Course;
+use App\Models\CourseRegistration;
+
 use App\Repositories\Contracts\CourseRepositoryInterface;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -28,7 +30,9 @@ class CourseRepository implements CourseRepositoryInterface
 
     public function findWithRelations(int $id, array $relations): Course
     {
-        return Course::with($relations)->findOrFail($id);
+        return Course::with($relations)
+                        ->where('accepted', true)
+                        ->findOrFail($id);
     }
 
     public function findByTeacherName(string $teacherName): Collection
@@ -38,6 +42,7 @@ class CourseRepository implements CourseRepositoryInterface
                 $query->where('first_name', 'like', "%$teacherName%")
                     ->orWhere('last_name', 'like', "%$teacherName%");
             })
+            ->where('accepted', true)
             ->get();
     }
 
@@ -47,6 +52,7 @@ class CourseRepository implements CourseRepositoryInterface
             ->whereHas('category', function($query) use ($categoryName) {
                 $query->where('name', 'like', "%$categoryName%");
             })
+            ->where('accepted', true)
             ->get();
     }
 
@@ -54,6 +60,7 @@ class CourseRepository implements CourseRepositoryInterface
     {
         return Course::with(['category', 'teacher.user'])
             ->where('name', 'like', "%$courseName%")
+            ->where('accepted', true)
             ->get();
     }
 
@@ -61,6 +68,24 @@ class CourseRepository implements CourseRepositoryInterface
     {
         return Course::with(['category', 'teacher.user'])
             ->where('category_id', $categoryId)
+            ->where('accepted', true)
             ->get();
+    }
+
+    public function registerStudent(int $courseId, int $studentId): CourseRegistration
+    {
+        return CourseRegistration::create([
+            'course_id' => $courseId,
+            'student_id' => $studentId,
+            'status' => 'active',
+            'registered_at' => now()
+        ]);
+    }
+
+    public function isStudentRegistered(int $courseId, int $studentId): bool
+    {
+        return CourseRegistration::where('course_id', $courseId)
+                            ->where('student_id', $studentId)
+                            ->exists();
     }
 }

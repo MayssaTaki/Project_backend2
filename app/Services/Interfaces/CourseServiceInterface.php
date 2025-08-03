@@ -13,4 +13,5 @@ interface CourseServiceInterface
     public function getCoursesByCategoryName(string $categoryName);
     public function searchCoursesByName(string $courseName);
     public function getCoursesByCategoryId(int $categoryId);
+    public function registerStudentForCourse(int $courseId, int $studentId);
 }

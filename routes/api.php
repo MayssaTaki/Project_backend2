@@ -55,7 +55,10 @@ Route::put('/teachers/{teacher}', [TeacherController::class, 'update']);
 
 Route::middleware([ 'reject.banned'])->group(function () {
 
-Route::post('/login', [AuthController::class, 'login']);});
+    Route::post('/login', [AuthController::class, 'login']);
+    Route::post('/courses/register', [CourseController::class, 'registerForCourse']);
+
+});
 
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:api');
 Route::post('/refresh', [AuthController::class, 'refreshToken']);
@@ -65,7 +68,6 @@ Route::post('/refresh', [AuthController::class, 'refreshToken']);
 Route::middleware(['reject.banned'])->prefix('wallet')->group(function () {
     Route::post('/student/charge', [WalletController::class, 'studentCharge']);
     Route::get('/student/balance', [WalletController::class, 'studentBalance']);
-
 });
 Route::get('/teacher/balance', [WalletController::class, 'teacherBalance']);
 

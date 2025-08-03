@@ -1,6 +1,7 @@
 <?php
 namespace App\Repositories\Contracts;
 use App\Models\Course;
+use App\Models\CourseRegistration;
 use Illuminate\Database\Eloquent\Collection;
 
 interface CourseRepositoryInterface{
@@ -12,4 +13,6 @@ interface CourseRepositoryInterface{
     public function findByCategoryName(string $categoryName): Collection;
     public function searchByName(string $courseName): Collection;
     public function findByCategoryId(int $categoryId): Collection;
+    public function registerStudent(int $courseId, int $studentId): CourseRegistration;
+    public function isStudentRegistered(int $courseId, int $studentId): bool;
 }
