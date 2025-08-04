@@ -55,7 +55,10 @@ Route::put('/teachers/{teacher}', [TeacherController::class, 'update']);
 
 Route::middleware([ 'reject.banned'])->group(function () {
 
-Route::post('/login', [AuthController::class, 'login']);});
+    Route::post('/login', [AuthController::class, 'login']);
+    Route::post('/courses/register', [CourseController::class, 'registerForCourse']);
+
+});
 
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:api');
 Route::post('/refresh', [AuthController::class, 'refreshToken']);
@@ -65,14 +68,13 @@ Route::post('/refresh', [AuthController::class, 'refreshToken']);
 Route::middleware(['reject.banned'])->prefix('wallet')->group(function () {
     Route::post('/student/charge', [WalletController::class, 'studentCharge']);
     Route::get('/student/balance', [WalletController::class, 'studentBalance']);
-
 });
 Route::get('/teacher/balance', [WalletController::class, 'teacherBalance']);
 
 Route::middleware(['teacher'])->group(function () {
     Route::post('/courses/add', [CourseController::class, 'addCourse']);
     Route::post('/courses/update', [CourseController::class, 'updateCourse']);
-
+    Route::post('/courses/uploadVideo/{courseId}', [CourseController::class, 'uploadVideo']);
 });
 
 Route::put('/users/{id}/profile', [UserController::class, 'updateUserProfile']);
@@ -82,3 +84,4 @@ Route::post('/courses/byTeacher', [CourseController::class, 'getCoursesByTeacher
 Route::post('/courses/byCategory', [CourseController::class, 'getCoursesByCategoryName']);
 Route::post('/courses/byName', [CourseController::class, 'searchCoursesByName']);
 Route::get('/courses/byCategory/{categoryId}', [CourseController::class, 'getCoursesByCategoryId']);
+Route::get('/courses/{courseId}/videos', [CourseController::class, 'getCourseVideos']);

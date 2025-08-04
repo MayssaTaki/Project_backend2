@@ -5,14 +5,21 @@ use Exception;
 use App\Repositories\Contracts\CourseRepositoryInterface;
 use App\Services\Interfaces\CourseServiceInterface;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Course;
+use App\Models\Student;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class CourseService implements CourseServiceInterface
 {
     protected CourseRepositoryInterface $CourseRepository;
+    protected WalletService $walletService;
 
-    public function __construct(CourseRepositoryInterface $CourseRepository)
+    public function __construct(CourseRepositoryInterface $CourseRepository, WalletService $walletService)
     {
         $this->CourseRepository = $CourseRepository;
+        $this->walletService = $walletService;
     }
 
     public function createCourse(array $data)
@@ -211,4 +218,125 @@ class CourseService implements CourseServiceInterface
             ];
         }
     }
+
+    public function registerStudentForCourse(int $courseId, int $studentId)
+    {
+        try {
+            // Check if student is banned
+            $student = Student::findOrFail($studentId);
+            if ($student->isBanned()) {
+                throw new \Exception('Student is banned and cannot register for courses');
+            }
+
+            // Get course with teacher relationship
+            $course = Course::with('teacher')->where('id', $courseId)
+                        ->where('accepted', true)
+                        ->firstOrFail();
+
+            if($course == null) {
+                throw new \Exception('course does not exist');
+            }
+
+            // Check if already registered
+            if ($this->CourseRepository->isStudentRegistered($courseId, $studentId)) {
+                throw new \Exception('Student is already registered for this course');
+            }
+
+            $this->walletService->transferFromStudentToTeacher(
+                $studentId,
+                $course->teacher->id,
+                $course->price
+            );
+
+            // Create registration
+            $registration = $this->CourseRepository->registerStudent($courseId, $studentId);
+
+            return [
+                'status' => 'success',
+                'message' => 'تم تسجيل الطالب في الكورس بنجاح',
+                'registration' => $registration
+            ];
+
+        } catch (Exception $ex) {
+            return [
+                'status' => 'error',
+                'message' => 'فشل في التسجيل للكورس: ' . $ex->getMessage()
+            ];
+        }
+    }
+
+    public function uploadCourseVideo(int $courseId, UploadedFile $videoFile): array
+    {
+        try {
+            $validated = validator([
+                'video' => $videoFile
+            ], [
+                'video' => 'required|file|mimetypes:video/mp4,video/quicktime,video/x-msvideo,video/x-matroska|max:204800' // 200MB max
+            ])->validate();
+
+            $course = $this->CourseRepository->findById($courseId);
+            if (!$course) {
+                throw new \Exception('Course not found');
+            }
+
+            $courseDirectory = 'courses/' . Str::slug($course->name);
+            Storage::makeDirectory($courseDirectory);
+
+            $fileNameInPath = time() . '_' . Str::random(10) . '.' . $videoFile->getClientOriginalExtension();
+
+
+            $path = $videoFile->storeAs($courseDirectory, $fileNameInPath, 'public');
+
+            $video = $this->CourseRepository->createVideo([
+                'course_id' => $courseId,
+                'video_url' => Storage::url($path),
+                'uploaded_at' => now(),
+                'file_size' => $videoFile->getSize(),
+                'video_name' => $videoFile->getClientOriginalName()
+            ]);
+
+            return [
+                'status' => 'success',
+                'message' => 'تم رفع الفيديو بنجاح',
+                'video' => $video
+            ];
+
+        } catch (Exception $ex) {
+            // Clean up if file was uploaded but DB failed
+            if (isset($path) && Storage::exists($path)) {
+                Storage::delete($path);
+            }
+
+            return [
+                'status' => 'error',
+                'message' => 'فشل في رفع الفيديو: ' . $ex->getMessage()
+            ];
+        }
+    }
+
+
+    public function getCourseVideos(int $courseId): array
+    {
+        try {
+            $videos = $this->CourseRepository->getVideosByCourseId($courseId);
+            
+            return [
+                'status' => 'success',
+                'videos' => $videos->map(function ($video) {
+                    return [
+                        'original_filename' => $video->video_name,
+                        'video_url' => url($video->video_url),
+                        'uploaded_at' => $video->uploaded_at->format('Y-m-d H:i:s')
+                    ];
+                })->toArray()
+            ];
+            
+        } catch (Exception $ex) {
+            return [
+                'status' => 'error',
+                'message' => 'Failed to fetch course videos: ' . $ex->getMessage()
+            ];
+        }
+    }
+
 }

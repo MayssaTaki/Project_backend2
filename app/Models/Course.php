@@ -24,4 +24,17 @@ class Course extends Model
     {
         return $this->belongsTo(Teacher::class, 'user_id', 'user_id');
     }
+
+    public function registeredStudents()
+    {
+        return $this->belongsToMany(Student::class, 'course_registrations')
+            ->using(CourseRegistration::class)
+            ->withPivot('status', 'registered_at')
+            ->withTimestamps();
+    }
+
+    public function videos()
+    {
+        return $this->hasMany(CourseVideo::class);
+    }
 }

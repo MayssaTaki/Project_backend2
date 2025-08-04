@@ -51,14 +51,18 @@ class Student extends Model
     }
 
     public function getImageAttribute()
-{
-    if ($this->profile_image) {
-        return asset('storage/' . $this->profile_image);
+    {
+        if ($this->profile_image) {
+            return asset('storage/' . $this->profile_image);
+        }
+        return asset('images/default-user-image.webp');
     }
-    return asset('images/default-user-image.webp');
-}
 
-        
-
-   
+    public function registeredCourses()
+    {
+        return $this->belongsToMany(Course::class, 'course_registrations')
+            ->using(CourseRegistration::class)
+            ->withPivot('status', 'registered_at')
+            ->withTimestamps();
+    }
 }

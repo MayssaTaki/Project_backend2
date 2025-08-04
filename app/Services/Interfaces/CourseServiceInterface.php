@@ -2,6 +2,7 @@
 
 namespace App\Services\Interfaces;
 
+use Illuminate\Http\UploadedFile;
 
 interface CourseServiceInterface 
 {
@@ -13,4 +14,7 @@ interface CourseServiceInterface
     public function getCoursesByCategoryName(string $categoryName);
     public function searchCoursesByName(string $courseName);
     public function getCoursesByCategoryId(int $categoryId);
+    public function registerStudentForCourse(int $courseId, int $studentId);
+    public function uploadCourseVideo(int $courseId, UploadedFile $videoFile);
+    public function getCourseVideos(int $courseId);
 }
