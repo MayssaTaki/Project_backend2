@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Course;
 use App\Models\CourseRegistration;
-
+use App\Models\CourseVideo;
 use App\Repositories\Contracts\CourseRepositoryInterface;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -87,5 +87,23 @@ class CourseRepository implements CourseRepositoryInterface
         return CourseRegistration::where('course_id', $courseId)
                             ->where('student_id', $studentId)
                             ->exists();
+    }
+
+    public function findById(int $courseId): ?Course
+    {
+        return Course::find($courseId);
+    }
+
+    public function createVideo(array $videoData): CourseVideo
+    {
+        return CourseVideo::create($videoData);
+    }
+
+    //this method will return the videos linked to a course, ordered "first uploaded shows first"
+    public function getVideosByCourseId(int $courseId): Collection
+    {
+        return CourseVideo::where('course_id', $courseId)
+            ->orderBy('uploaded_at', 'asc')
+            ->get();
     }
 }

@@ -1,5 +1,6 @@
 <?php
 namespace App\Repositories\Contracts;
+use App\Models\CourseVideo;
 use App\Models\Course;
 use App\Models\CourseRegistration;
 use Illuminate\Database\Eloquent\Collection;
@@ -15,4 +16,7 @@ interface CourseRepositoryInterface{
     public function findByCategoryId(int $categoryId): Collection;
     public function registerStudent(int $courseId, int $studentId): CourseRegistration;
     public function isStudentRegistered(int $courseId, int $studentId): bool;
+    public function findById(int $courseId): ?Course;
+    public function createVideo(array $videoData): CourseVideo;
+    public function getVideosByCourseId(int $courseId): Collection;
 }

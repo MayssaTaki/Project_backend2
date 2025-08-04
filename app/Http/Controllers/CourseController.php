@@ -159,4 +159,35 @@ class CourseController extends Controller
             $result['status'] === 'error' ? 400 : 200
         );
     }
+
+    public function uploadVideo(Request $request, $courseId)
+    {
+
+        if (!$request->hasFile('video')) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'No video file uploaded'
+            ], 400);
+        }
+
+        $result = $this->courseService->uploadCourseVideo(
+            $courseId, 
+            $request->file('video')
+        );
+
+        return response()->json(
+            $result,
+            $result['status'] === 'error' ? 400 : 200
+        );
+    }
+
+    public function getCourseVideos($courseId)
+    {
+        $result = $this->courseService->getCourseVideos($courseId);
+        
+        return response()->json(
+            $result,
+            $result['status'] === 'error' ? 404 : 200
+        );
+    }
 }

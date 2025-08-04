@@ -74,7 +74,7 @@ Route::get('/teacher/balance', [WalletController::class, 'teacherBalance']);
 Route::middleware(['teacher'])->group(function () {
     Route::post('/courses/add', [CourseController::class, 'addCourse']);
     Route::post('/courses/update', [CourseController::class, 'updateCourse']);
-
+    Route::post('/courses/uploadVideo/{courseId}', [CourseController::class, 'uploadVideo']);
 });
 
 Route::put('/users/{id}/profile', [UserController::class, 'updateUserProfile']);
@@ -84,3 +84,4 @@ Route::post('/courses/byTeacher', [CourseController::class, 'getCoursesByTeacher
 Route::post('/courses/byCategory', [CourseController::class, 'getCoursesByCategoryName']);
 Route::post('/courses/byName', [CourseController::class, 'searchCoursesByName']);
 Route::get('/courses/byCategory/{categoryId}', [CourseController::class, 'getCoursesByCategoryId']);
+Route::get('/courses/{courseId}/videos', [CourseController::class, 'getCourseVideos']);
