@@ -8,7 +8,7 @@
   @if ($errors->any())
     <div class="alert alert-info alert-dismissible fade show" role="alert">
       <strong>There were some issues with your input:</strong>
-      <ul class="mb-0 mt-2">
+      <ul class="mb-0 mt-2">  
         @foreach ($errors->all() as $error)
           <li>{{ $error }}</li>
         @endforeach
@@ -49,6 +49,7 @@
               <th>Phone</th>
               <th>Gender</th>
               <th>Status</th>
+              <th>Wallet Balance</th> 
               <th>Action</th>
             </tr>
           </thead>
@@ -64,6 +65,7 @@
                     {{ $student->is_banned ? 'Inactive' : 'Active' }}
                   </span>
                 </td>
+                <td>{{ number_format($student->wallet_balance ?? 0, 2) }} </td> 
                 <td>
                   <button type="button" class="btn btn-info btn-sm mb-1" data-bs-toggle="modal" data-bs-target="#detailsModal{{ $student->id }}">
                     <i class="fas fa-eye"></i>
@@ -109,6 +111,7 @@
                                 {{ $student->is_banned ? 'Inactive' : 'Active' }}
                               </span>
                             </div>
+                            <div class="col-12"><strong>Wallet Balance:</strong> {{ number_format($student->wallet_balance ?? 0, 2) }}</div>
                           </div>
                         </div>
                         <div class="modal-footer">
@@ -121,7 +124,7 @@
               </tr>
             @empty
               <tr>
-                <td colspan="6" class="text-center text-muted">
+                <td colspan="7" class="text-center text-muted">
                   <i class="fas fa-info-circle"></i> No students found.
                 </td>
               </tr>

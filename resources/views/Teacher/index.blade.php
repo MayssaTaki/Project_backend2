@@ -48,6 +48,8 @@
               <th>Specialization</th>
               <th>Status</th>
               <th>Email</th>
+                            <th>Wallet Balance</th> 
+
               <th>Action</th>
             </tr>
           </thead>
@@ -62,6 +64,8 @@
                   </span>
                 </td>
                 <td>{{ $teacher->user->email }}</td>
+                                <td>{{ number_format($teacher->wallet_balance ?? 0, 2) }} </td>
+
                 <td>
                   <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#detailsModal{{ $teacher->id }}">
                     <i class="fas fa-eye"></i> 

@@ -6,6 +6,7 @@ use App\Services\TeacherService;
 use App\Services\StudentService;
 use App\Services\CourseService;
 use App\Services\ExamService;
+use App\Services\WalletService;
 
 
 use App\Models\Category;
@@ -23,13 +24,14 @@ protected $courseService;
 
     public function __construct(CategoryService $categoryService
     ,TeacherService $teacherService,StudentService $studentService,
-    CourseService $courseService,ExamService $examService)
+    CourseService $courseService,ExamService $examService,WalletService $walletService)
     {
         $this->categoryService = $categoryService;
                 $this->teacherService = $teacherService;
                   $this->studentService = $studentService;
                   $this->courseService = $courseService;
                   $this->examService = $examService;
+                  $this->walletService = $walletService;
 
 
     }
@@ -79,6 +81,9 @@ if($request->hasFile('image')){
 public function getAllTeachers()
     {
         $teachers = $this->teacherService->getAllTeachers();
+      foreach ($teachers as $teacher) {
+        $teacher->wallet_balance = $this->walletService->getBalance($teacher);
+    }
         return view('Teacher.index', [
         'teachers' => $teachers
     ]);
@@ -125,6 +130,9 @@ public function searchTeacher(Request $request)
 public function getAllStudents()
     {
         $students = $this->studentService->getAllStudent();
+          foreach ($students as $student) {
+        $student->wallet_balance = $this->walletService->getBalance($student);
+    }
         return view('Student.index', [
         'students' => $students
     ]);
@@ -235,6 +243,7 @@ public function getExamByCourse($courseId)
         'exam' => $exam,
     ]);
 }
+
 
 }
 
