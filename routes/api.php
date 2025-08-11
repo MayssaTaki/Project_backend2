@@ -10,6 +10,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\WalletController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ExamController;
+use App\Http\Controllers\ExamAttemptController;
 
 
 
@@ -19,7 +20,8 @@ Route::post('/exams', [ExamController::class, 'store']);
 Route::get('/courses/{courseId}/exams', [ExamController::class, 'getExamByCourse']);
 Route::get('/courses/{courseId}/exam/student', [ExamController::class, 'showExamForStudent']);
 
-
+  Route::post('/exams/{examId}/start', [ExamAttemptController::class, 'start']);
+    Route::post('/exam-attempts/{attemptId}/submit', [ExamAttemptController::class, 'submit']);
 
 
 

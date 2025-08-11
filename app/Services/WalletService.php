@@ -33,7 +33,6 @@ class WalletService
         return $this->repo->getByModel($model)->balance;
     }
 
-    // app/Services/WalletService.php
     public function transferFromStudentToTeacher(int $studentId, int $teacherId, float $amount): void
     {
         if ($amount <= 0) {
@@ -45,20 +44,16 @@ class WalletService
         $teacher = Teacher::findOrFail($teacherId);
 
         DB::transaction(function () use ($student, $teacher, $amount) {
-            // Get wallets
             $studentWallet = $this->repo->getByModel($student);
             $teacherWallet = $this->repo->getByModel($teacher);
 
-            // Check student balance
             if ($studentWallet->balance < $amount) {
                 throw new \Exception('الرصيد غير كافي');
             }
 
-            // Perform transfer
             $studentWallet->balance -= $amount;
             $teacherWallet->balance += $amount;
 
-            // Save changes
             $studentWallet->save();
             $teacherWallet->save();
         });

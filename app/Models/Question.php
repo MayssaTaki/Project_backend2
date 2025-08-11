@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class question extends Model
+class Question extends Model
 {
 
 protected $fillable = [
@@ -14,6 +14,9 @@ protected $fillable = [
     return $this->hasMany(Choice::class);
 }
 
-
+   public function answers()
+    {
+        return $this->hasMany(StudentAnswer::class, 'question_id', 'id');
+    }
 
 }
