@@ -5,7 +5,6 @@
 @section('content')
 <div class="container-fluid">
 
-  {{-- Validation Errors --}}
   @if ($errors->any())
     <div class="alert alert-info alert-dismissible fade show" role="alert">
       <strong>There were some issues with your input:</strong>
@@ -18,7 +17,6 @@
     </div>
   @endif
 
-  {{-- Page Title + Search --}}
   <div class="row mb-4">
     <div class="col-12">
       <div class="card shadow-sm border-0 w-100">
@@ -40,7 +38,6 @@
     </div>
   </div>
 
-  {{-- Students Table --}}
   <div class="card shadow-sm border-0 w-100">
     <div class="card-body p-0">
       <div class="table-responsive">
@@ -68,12 +65,10 @@
                   </span>
                 </td>
                 <td>
-                  {{-- View Button --}}
                   <button type="button" class="btn btn-info btn-sm mb-1" data-bs-toggle="modal" data-bs-target="#detailsModal{{ $student->id }}">
                     <i class="fas fa-eye"></i>
                   </button>
 
-                  {{-- Block/Unblock Button --}}
                   @if (!$student->is_banned)
                     <form action="{{ route('students.block', $student->id) }}" method="POST" class="d-inline">
                       @csrf
@@ -92,7 +87,6 @@
                     </form>
                   @endif
 
-                  {{-- Modal --}}
                   <div class="modal fade" id="detailsModal{{ $student->id }}" tabindex="-1" aria-labelledby="detailsModalLabel{{ $student->id }}" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-lg">
                       <div class="modal-content">
@@ -138,7 +132,6 @@
     </div>
   </div>
 
-  {{-- Pagination --}}
   <div class="d-flex justify-content-center mt-4">
     {{ $students->appends(request()->query())->links('pagination::bootstrap-5') }}
   </div>

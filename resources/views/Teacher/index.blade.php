@@ -5,7 +5,6 @@
 @section('content')
 <div class="container-fluid">
 
-  {{-- Validation Errors --}}
   @if ($errors->any())
     <div class="alert alert-info alert-dismissible fade show" role="alert">
       <strong>There were some issues with your input:</strong>
@@ -18,7 +17,6 @@
     </div>
   @endif
 
-  {{-- Page Title + Search --}}
   <div class="row mb-4">
     <div class="col-12">
       <div class="card shadow-sm border-0 w-100">
@@ -40,7 +38,6 @@
     </div>
   </div>
 
-  {{-- Teachers Table --}}
   <div class="card shadow-sm border-0 w-100">
     <div class="card-body p-0">
       <div class="table-responsive">
@@ -66,12 +63,10 @@
                 </td>
                 <td>{{ $teacher->user->email }}</td>
                 <td>
-                  {{-- View Button --}}
                   <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#detailsModal{{ $teacher->id }}">
                     <i class="fas fa-eye"></i> 
                   </button>
 
-                  {{-- Approve/Reject Buttons --}}
                   @if($teacher->status === 'pending')
                     <div class="btn-group mt-1" role="group">
                       <form action="{{ route('teachers.approve', $teacher->id) }}" method="POST" class="d-inline">
@@ -85,7 +80,6 @@
                     </div>
                   @endif
 
-                  {{-- Modal inside the table cell --}}
                   <div class="modal fade" id="detailsModal{{ $teacher->id }}" tabindex="-1" aria-labelledby="detailsModalLabel{{ $teacher->id }}" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-lg">
                       <div class="modal-content">
@@ -134,7 +128,6 @@
     </div>
   </div>
 
-  {{-- Pagination --}}
   <div class="d-flex justify-content-center mt-4">
     {{ $teachers->appends(request()->query())->links('pagination::bootstrap-5') }}
   </div>
@@ -143,6 +136,5 @@
 @endsection
 
 @push('js')
-  {{-- Bootstrap 5 JS (if not already included) --}}
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 @endpush

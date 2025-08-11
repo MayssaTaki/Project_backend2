@@ -50,13 +50,16 @@ class Student extends Model
         });
     }
 
-    public function getImageAttribute()
-    {
-        if ($this->profile_image) {
-            return asset('storage/' . $this->profile_image);
-        }
-        return asset('images/default-user-image.webp');
+ public function getProfileImageAttribute()
+{
+    if ($this->attributes['profile_image']) {
+        return asset('storage/' . $this->attributes['profile_image']);
     }
+
+    return asset('images/default-user-image.webp');
+}
+
+
 
     public function registeredCourses()
     {

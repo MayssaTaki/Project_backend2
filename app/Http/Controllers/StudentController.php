@@ -11,7 +11,7 @@ use App\Models\Student;
 use App\Http\Resources\StudentResource;
 use Illuminate\Http\Request;
 
-use App\Services\StudentService;
+use App\Services\Interfaces\StudentServiceInterface;
 use Illuminate\Http\JsonResponse;
 use App\Exceptions\StudentRegistrationException;
 use App\Exceptions\UserRegistrationException;
@@ -19,9 +19,9 @@ use Exception;
 
 class StudentController extends Controller
 {
-    protected StudentService $studentService;
+    protected StudentServiceInterface $studentService;
 
-    public function __construct(StudentService $studentService)
+    public function __construct(StudentServiceInterface $studentService)
     {
         $this->studentService = $studentService;
     }

@@ -5,12 +5,13 @@ use App\Repositories\CategoryRepository;
 use Illuminate\Http\JsonResponse;
 use Exception;
 use Illuminate\Support\Arr;
-
+use Illuminate\Support\Facades\File;
 use App\Models\Category;
 use App\Repositories\Contracts\CategoryRepositoryInterface;
+use App\Services\Interfaces\CategoryServiceInterface;
 
 
-class CategoryService
+class CategoryService implements CategoryServiceInterface
 {
     protected $categoryRepository;
 
@@ -58,21 +59,21 @@ public function updateCategory($id, array $data): Category
 {
     $category = Category::findOrFail($id);
 
-    // التعامل مع الصورة إن وُجدت
-    if (isset($data['image']) && $data['image'] instanceof \Illuminate\Http\UploadedFile) {
-        if ($category->image && file_exists(public_path($category->image))) {
-            unlink(public_path($category->image));
-        }
+    $category->name = $data['name'];
 
-        $imageName = time() . '.' . $data['image']->getClientOriginalExtension();
-        $data['image']->move(public_path('uploads/categories'), $imageName);
-        $data['image'] = 'uploads/categories/' . $imageName;
+    if (isset($data['image'])) {
+        $path = $data['image']->store('categories', 'public');
+        $category->image = $path;
+    }
+    $category->save();
+
+    $category = $category->fresh();
+
+    if ($category->image) {
+        $category->image = asset('storage/' . $category->image);
     }
 
-    // تحديث مباشرة بأي بيانات مرسلة (سواء تغيرت أم لا)
-    $category->update(Arr::only($data, ['name', 'image']));
-
-    return $category->fresh();
+    return $category;
 }
 
 
@@ -80,4 +81,6 @@ public function updateCategory($id, array $data): Category
 {
     return $this->categoryRepository->search($query);
 }
+
+
 }

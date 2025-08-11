@@ -17,4 +17,8 @@ interface CourseServiceInterface
     public function registerStudentForCourse(int $courseId, int $studentId);
     public function uploadCourseVideo(int $courseId, UploadedFile $videoFile);
     public function getCourseVideos(int $courseId);
+    public function acceptCourse(int $courseId, $user);
+    public function rejectCourse(int $courseId, $user);
+    public function getAll();
+              public function getStudentsByCourse(int $courseId);
 }

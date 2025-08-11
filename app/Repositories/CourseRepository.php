@@ -19,7 +19,7 @@ class CourseRepository implements CourseRepositoryInterface
     {
         $course = Course::findOrFail($id);
         $course->update($data);
-        return $course->fresh(); // Return fresh instance from database
+        return $course->fresh(); 
     }
 
     public function delete(int $id): void
@@ -99,11 +99,39 @@ class CourseRepository implements CourseRepositoryInterface
         return CourseVideo::create($videoData);
     }
 
-    //this method will return the videos linked to a course, ordered "first uploaded shows first"
     public function getVideosByCourseId(int $courseId): Collection
     {
         return CourseVideo::where('course_id', $courseId)
             ->orderBy('uploaded_at', 'asc')
             ->get();
+    }
+
+     public function acceptCourse(int $courseId)
+    {
+        $course = Course::findOrFail($courseId);
+        $course->accepted = true;
+        $course->save();
+
+        return $course;
+    }
+
+    public function rejectCourse(int $courseId)
+    {
+        $course = Course::findOrFail($courseId);
+        $course->accepted = false;
+        $course->save();
+
+        return $course;
+    }
+   public function getAll()
+{
+    return Course::with('teacher.user')->paginate(10);
+}
+
+  public function getStudentsByCourse(int $courseId)
+    {
+        return CourseRegistration::with('student')
+            ->where('course_id', $courseId)
+            ->get(); 
     }
 }

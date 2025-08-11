@@ -50,7 +50,7 @@ class CourseService implements CourseServiceInterface
         try 
         {
             $courseId = $data['course_id'];
-            unset($data['course_id']); // Remove course_id from update data
+            unset($data['course_id']); 
             
             $course = $this->CourseRepository->update($courseId, $data);
             
@@ -89,7 +89,6 @@ class CourseService implements CourseServiceInterface
         }
     }
 
-        // app/Services/CourseService.php
     public function getCourseDetails(int $courseId)
     {
         try {
@@ -222,13 +221,11 @@ class CourseService implements CourseServiceInterface
     public function registerStudentForCourse(int $courseId, int $studentId)
     {
         try {
-            // Check if student is banned
             $student = Student::findOrFail($studentId);
             if ($student->isBanned()) {
                 throw new \Exception('Student is banned and cannot register for courses');
             }
 
-            // Get course with teacher relationship
             $course = Course::with('teacher')->where('id', $courseId)
                         ->where('accepted', true)
                         ->firstOrFail();
@@ -237,7 +234,6 @@ class CourseService implements CourseServiceInterface
                 throw new \Exception('course does not exist');
             }
 
-            // Check if already registered
             if ($this->CourseRepository->isStudentRegistered($courseId, $studentId)) {
                 throw new \Exception('Student is already registered for this course');
             }
@@ -248,7 +244,6 @@ class CourseService implements CourseServiceInterface
                 $course->price
             );
 
-            // Create registration
             $registration = $this->CourseRepository->registerStudent($courseId, $studentId);
 
             return [
@@ -302,7 +297,6 @@ class CourseService implements CourseServiceInterface
             ];
 
         } catch (Exception $ex) {
-            // Clean up if file was uploaded but DB failed
             if (isset($path) && Storage::exists($path)) {
                 Storage::delete($path);
             }
@@ -339,4 +333,28 @@ class CourseService implements CourseServiceInterface
         }
     }
 
+    public function acceptCourse(int $courseId, $user)
+    {
+    
+
+        return $this->CourseRepository->acceptCourse($courseId);
+    }
+
+    public function rejectCourse(int $courseId, $user)
+    {
+    
+
+        return $this->CourseRepository->rejectCourse($courseId);
+    }
+        public function getAll(){
+     return $this->CourseRepository->getAll();
+
+        }
+
+
+          public function getStudentsByCourse(int $courseId)
+{
+         return $this->CourseRepository->getStudentsByCourse($courseId);
+
+}
 }

@@ -338,6 +338,12 @@ return [
             'icon' => 'fas fa-users',
             
         ],
+           [
+            'text' => 'Courses',
+            'url' => 'courses',
+            'icon' => 'fas fa-laptop',
+            
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',

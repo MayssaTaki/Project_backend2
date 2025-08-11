@@ -11,10 +11,12 @@ use App\Services\UserService ;
 use App\Services\TransactionService;
 use App\Repositories\Contracts\StudentRepositoryInterface;
 use App\Repositories\Contracts\UserRepositoryInterface;
+use App\Services\Interfaces\StudentServiceInterface;
+
 use Illuminate\Support\Facades\Hash;
 
 
-class StudentService
+class StudentService implements StudentServiceInterface
 {
     protected StudentRepository $studentRepository;
     protected UserRepository $userRepository;
@@ -43,9 +45,12 @@ class StudentService
             $data['role'] = 'student';
             $user = $this->userService->register($data);
             $data['user_id'] = $user->id;
-            if (isset($data['profile_image'])) {
-                $data['profile_image'] = $data['profile_image']->store('profile_images', 'public');
-            }
+           if (isset($data['profile_image']) && $data['profile_image'] instanceof \Illuminate\Http\UploadedFile) {
+$filename = time() . '_' . $data['profile_image']->getClientOriginalName();
+$data['profile_image']->move(public_path('images'), $filename);
+$data['profile_image'] = 'images/' . $filename;
+}
+
             $studentData = [
                 'user_id' => $data['user_id'],
                 'first_name' => $data['first_name'],

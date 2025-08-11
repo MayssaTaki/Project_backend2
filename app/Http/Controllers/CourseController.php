@@ -72,7 +72,6 @@ class CourseController extends Controller
         }
     }
 
-    // app/Http/Controllers/CourseController.php
     public function getCourseDetails($courseId)
     {
         $result = $this->courseService->getCourseDetails($courseId);
@@ -189,5 +188,42 @@ class CourseController extends Controller
             $result,
             $result['status'] === 'error' ? 404 : 200
         );
+    }
+
+
+      public function acceptCourse($id, Request $request)
+    {
+        try {
+            $course = $this->courseService->acceptCourse($id, $request->user());
+
+            return response()->json([
+                'status' => 'success',
+                'message' => 'تم قبول الكورس بنجاح.',
+                'course' => $course
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => $e->getMessage()
+            ], 403);
+        }
+    }
+
+    public function rejectCourse($id, Request $request)
+    {
+        try {
+            $course = $this->courseService->rejectCourse($id, $request->user());
+
+            return response()->json([
+                'status' => 'success',
+                'message' => 'تم رفض الكورس بنجاح.',
+                'course' => $course
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => $e->getMessage()
+            ], 403);
+        }
     }
 }
