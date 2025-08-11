@@ -35,6 +35,16 @@
                 </div>
             </div>
         </div>
+         <div class="col-lg-4 col-md-6 col-12 mb-3">
+            <div class="info-box bg-gradient-info animate__animated animate__fadeInRight">
+                <span class="info-box-icon"><i class="fas fa-laptop"></i></span>
+                <div class="info-box-content">
+                    <span class="info-box-text">All Courses</span>
+                    <span class="info-box-number">{{ \App\Models\Course::count() }}</span>
+                    <div class="progress"><div class="progress-bar" style="width: 30%"></div></div>
+                </div>
+            </div>
+        </div>
     </div>
 
     {{-- Charts Row --}}

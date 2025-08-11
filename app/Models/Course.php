@@ -37,4 +37,11 @@ class Course extends Model
     {
         return $this->hasMany(CourseVideo::class);
     }
+    public function exams()
+{
+    return $this->hasMany(Exam::class, 'course_id');
+}
+
+
+
 }

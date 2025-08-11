@@ -15,10 +15,10 @@ class TeacherRepository implements TeacherRepositoryInterface
         return Teacher::create($data);
     }
 
-    public function update(Teacher $teacher, array $data): Teacher
+ public function update(Teacher $teacher, array $data): Teacher
 {
     $teacher->update($data);
-    return $teacher;
+    return $teacher->fresh(); 
 }
 
 
