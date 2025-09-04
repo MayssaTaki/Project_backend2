@@ -19,7 +19,7 @@ class CourseRepository implements CourseRepositoryInterface
     {
         $course = Course::findOrFail($id);
         $course->update($data);
-        return $course->fresh(); // Return fresh instance from database
+        return $course->fresh();
     }
 
     public function delete(int $id): void
@@ -37,8 +37,8 @@ class CourseRepository implements CourseRepositoryInterface
 
     public function findByTeacherName(string $teacherName): Collection
     {
-        return Course::with(['category', 'teacher.user'])
-            ->whereHas('teacher.user', function($query) use ($teacherName) {
+        return Course::with(['category', 'teacher'])
+            ->whereHas('teacher', function($query) use ($teacherName) {
                 $query->where('first_name', 'like', "%$teacherName%")
                     ->orWhere('last_name', 'like', "%$teacherName%");
             })
@@ -48,7 +48,7 @@ class CourseRepository implements CourseRepositoryInterface
 
     public function findByCategoryName(string $categoryName): Collection
     {
-        return Course::with(['category', 'teacher.user'])
+        return Course::with(['category', 'teacher'])
             ->whereHas('category', function($query) use ($categoryName) {
                 $query->where('name', 'like', "%$categoryName%");
             })
@@ -58,7 +58,7 @@ class CourseRepository implements CourseRepositoryInterface
 
     public function searchByName(string $courseName): Collection
     {
-        return Course::with(['category', 'teacher.user'])
+        return Course::with(['category', 'teacher'])
             ->where('name', 'like', "%$courseName%")
             ->where('accepted', true)
             ->get();
@@ -66,7 +66,7 @@ class CourseRepository implements CourseRepositoryInterface
 
     public function findByCategoryId(int $categoryId): Collection
     {
-        return Course::with(['category', 'teacher.user'])
+        return Course::with(['category', 'teacher'])
             ->where('category_id', $categoryId)
             ->where('accepted', true)
             ->get();
@@ -99,7 +99,7 @@ class CourseRepository implements CourseRepositoryInterface
         return CourseVideo::create($videoData);
     }
 
-    //this method will return the videos linked to a course, ordered "first uploaded shows first"
+    
     public function getVideosByCourseId(int $courseId): Collection
     {
         return CourseVideo::where('course_id', $courseId)

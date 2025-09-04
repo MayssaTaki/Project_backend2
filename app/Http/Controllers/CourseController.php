@@ -149,10 +149,7 @@ class CourseController extends Controller
             ], 403);
         }
 
-        $result = $this->courseService->registerStudentForCourse(
-            $request->course_id, 
-            $student->id
-        );
+        $result = $this->courseService->registerStudentForCourse($request->course_id, $student->id);
 
         return response()->json(
             $result,
@@ -170,10 +167,7 @@ class CourseController extends Controller
             ], 400);
         }
 
-        $result = $this->courseService->uploadCourseVideo(
-            $courseId, 
-            $request->file('video')
-        );
+        $result = $this->courseService->uploadCourseVideo($courseId, $request->file('video'));
 
         return response()->json(
             $result,
