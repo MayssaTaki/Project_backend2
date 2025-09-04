@@ -50,16 +50,14 @@ class Student extends Model
         });
     }
 
- public function getProfileImageAttribute()
-{
-    if ($this->attributes['profile_image']) {
-        return asset('storage/' . $this->attributes['profile_image']);
+    public function getProfileImageAttribute()
+    {
+        if ($this->attributes['profile_image']) {
+            return asset('storage/' . $this->attributes['profile_image']);
+        }
+
+        return asset('images/default-user-image.webp');
     }
-
-    return asset('images/default-user-image.webp');
-}
-
-
 
     public function registeredCourses()
     {
@@ -67,5 +65,10 @@ class Student extends Model
             ->using(CourseRegistration::class)
             ->withPivot('status', 'registered_at')
             ->withTimestamps();
+    }
+
+    public function teacherEvaluations()
+    {
+        return $this->hasMany(TeachersEvaluation::class, 'student_id', 'user_id');
     }
 }

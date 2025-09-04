@@ -155,60 +155,96 @@ public function getAllTeachers()
     }
 
     public function approved()
-{
-    $teachers = $this->teacherService->getApprovedTeachers();
-    $count = $teachers->count();
+    {
+        $teachers = $this->teacherService->getApprovedTeachers();
+        $count = $teachers->count();
 
-    if ($count > 0) {
-        return response()->json([
-            'message' => 'تم العثور على الأساتذة المقبولين.',
-            'count' => $count,
-            'data' => $teachers
-        ], 200);
-    } else {
-        return response()->json([
-            'message' => 'لا يوجد أساتذة مقبولون حتى الآن.',
-            'count' => $count
-        ], 200);
+        if ($count > 0) {
+            return response()->json([
+                'message' => 'تم العثور على الأساتذة المقبولين.',
+                'count' => $count,
+                'data' => $teachers
+            ], 200);
+        } else {
+            return response()->json([
+                'message' => 'لا يوجد أساتذة مقبولون حتى الآن.',
+                'count' => $count
+            ], 200);
+        }
     }
-}
 
-public function rejected()
-{
-    $teachers = $this->teacherService->getRejectedTeachers();
-    $count = $teachers->count(); 
+    public function rejected()
+    {
+        $teachers = $this->teacherService->getRejectedTeachers();
+        $count = $teachers->count(); 
 
-    if ($count > 0) {
-        return response()->json([
-            'message' => 'تم العثور على الأساتذة المرفوضين.',
-            'count' => $count,
-            'data' => $teachers
-        ], 200);
-    } else {
-        return response()->json([
-            'message' => 'لا يوجد أساتذة مرفوضين حتى الآن.',
-            'count' => $count
-        ], 200);
+        if ($count > 0) {
+            return response()->json([
+                'message' => 'تم العثور على الأساتذة المرفوضين.',
+                'count' => $count,
+                'data' => $teachers
+            ], 200);
+        } else {
+            return response()->json([
+                'message' => 'لا يوجد أساتذة مرفوضين حتى الآن.',
+                'count' => $count
+            ], 200);
+        }
     }
-}
 
-public function pened()
-{
-    $teachers = $this->teacherService->getPendingTeachers();
-    $count = $teachers->count();  
+    public function pened()
+    {
+        $teachers = $this->teacherService->getPendingTeachers();
+        $count = $teachers->count();  
 
-    if ($count > 0) {
-        return response()->json([
-            'message' => 'تم العثور على الأساتذة المعلقين.',
-            'count' => $count,
-            'data' => $teachers
-        ], 200);
-    } else {
-        return response()->json([
-            'message' => 'لا يوجد أساتذة معلقين حتى الآن.',
-            'count' => $count
-        ], 200);
+        if ($count > 0) {
+            return response()->json([
+                'message' => 'تم العثور على الأساتذة المعلقين.',
+                'count' => $count,
+                'data' => $teachers
+            ], 200);
+        } else {
+            return response()->json([
+                'message' => 'لا يوجد أساتذة معلقين حتى الآن.',
+                'count' => $count
+            ], 200);
+        }
     }
-}
+
+    public function evaluateTeacher(Request $request, $teacherId)
+    {
+        $request->validate([
+            'evaluation_value' => 'required|integer|min:0|max:5'
+        ]);
+
+        $student = auth()->user()->student;
+        if (!$student) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'المستخدم ليس طالبًا'
+            ], 403);
+        }
+
+        $result = $this->teacherService->evaluateTeacher(
+            $teacherId,
+            $student->user_id,
+            $request->evaluation_value
+        );
+
+        return response()->json(
+            $result,
+            $result['status'] === 'error' ? 400 : 200
+        );
+    }
+
+    public function getTeacherRating($teacherId)
+    {
+        $result = $this->teacherService->getTeacherAverageRating($teacherId);
+        
+        return response()->json(
+            $result,
+            $result['status'] === 'error' ? 404 : 200
+        );
+    }
 
 }    

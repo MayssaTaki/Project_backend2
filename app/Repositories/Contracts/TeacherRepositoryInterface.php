@@ -1,6 +1,7 @@
 <?php
 namespace App\Repositories\Contracts;
 use App\Models\Teacher;
+use App\Models\TeachersEvaluation;
 
 interface TeacherRepositoryInterface{
     public function update(Teacher $teacher, array $data): Teacher;
@@ -14,4 +15,8 @@ interface TeacherRepositoryInterface{
     public function getRejectedTeachers();
     public function getPendingTeachers();
     public function create(array $data): Teacher;
+    public function createEvaluation(array $evaluationData): TeachersEvaluation;
+    public function updateEvaluation(int $evaluationId, int $value): TeachersEvaluation;
+    public function getStudentEvaluation(int $teacherId, int $studentId): ?TeachersEvaluation;
+    public function getTeacherAverageRating(int $teacherId): float;
 }

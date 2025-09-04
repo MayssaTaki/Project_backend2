@@ -176,4 +176,68 @@ public function getAllTeachers()
     {
         return $this->teacherRepository->getPendingTeachers();
     }
+
+
+    public function evaluateTeacher(int $teacherId, int $studentId, int $evaluationValue): array
+    {
+        try {
+   
+            if ($evaluationValue < 0 || $evaluationValue > 5) {
+                throw new \Exception('التقييم يجب أن يكون بين 0 و 5');
+            }
+
+            $existingEvaluation = $this->teacherRepository->getStudentEvaluation($teacherId, $studentId);
+
+            if ($existingEvaluation) {
+                $evaluation = $this->teacherRepository->updateEvaluation(
+                    $existingEvaluation->id,
+                    $evaluationValue
+                );
+                $message = 'تم تحديث تقييم الأستاذ بنجاح';
+            } else {          
+                $evaluation = $this->teacherRepository->createEvaluation([
+                    'teacher_id' => $teacherId,
+                    'student_id' => $studentId,
+                    'evaluation_value' => $evaluationValue
+                ]);
+                $message = 'تم تقييم الأستاذ بنجاح';
+            }
+
+            return [
+                'status' => 'success',
+                'message' => $message,
+                'evaluation' => $evaluation,
+                'average_rating' => $this->teacherRepository->getTeacherAverageRating($teacherId)
+            ];
+
+        } catch (Exception $ex) {
+            return [
+                'status' => 'error',
+                'message' => 'فشل في التقييم: ' . $ex->getMessage()
+            ];
+        }
+    }
+
+    public function getTeacherAverageRating(int $teacherId): array
+    {
+        try {
+            $teacher = Teacher::where('user_id', $teacherId)->first();
+            if (!$teacher) {
+                throw new \Exception('Teacher not found');
+            }
+
+            $averageRating = $this->teacherRepository->getTeacherAverageRating($teacherId);
+
+            return [
+                'status' => 'success',
+                'average_rating' => round($averageRating, 1)
+            ];
+
+        } catch (Exception $ex) {
+            return [
+                'status' => 'error',
+                'message' => 'Failed to get teacher rating: ' . $ex->getMessage()
+            ];
+        }
+    }
 }

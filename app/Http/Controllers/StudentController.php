@@ -170,40 +170,40 @@ class StudentController extends Controller
     }
 
     public function block()
-{
-    $students = $this->studentService->getBanStudents();
-    $count = $students->count();  
+    {
+        $students = $this->studentService->getBanStudents();
+        $count = $students->count();  
 
-    if ($count > 0) {
-        return response()->json([
-            'message' => 'تم العثور على الطلاب المحظورين.',
-            'count' => $count,
-            'data' => $students
-        ], 200);
-    } else {
-        return response()->json([
-            'message' => 'لا يوجد طلاب محظورة حتى الآن.',
-            'count' => $count
-        ], 200);
+        if ($count > 0) {
+            return response()->json([
+                'message' => 'تم العثور على الطلاب المحظورين.',
+                'count' => $count,
+                'data' => $students
+            ], 200);
+        } else {
+            return response()->json([
+                'message' => 'لا يوجد طلاب محظورة حتى الآن.',
+                'count' => $count
+            ], 200);
+        }
     }
-}
-public function active()
-{
-    $students = $this->studentService->getActiveStudents();
-    $count = $students->count();  
+    public function active()
+    {
+        $students = $this->studentService->getActiveStudents();
+        $count = $students->count();  
 
-    if ($count > 0) {
-        return response()->json([
-            'message' => 'تم العثور على الطلاب النشطة.',
-            'count' => $count,
-            'data' => $students
-        ], 200);
-    } else {
-        return response()->json([
-            'message' => 'لا يوجد طلاب نشطة حتى الآن.',
-            'count' => $count
-        ], 200);
+        if ($count > 0) {
+            return response()->json([
+                'message' => 'تم العثور على الطلاب النشطة.',
+                'count' => $count,
+                'data' => $students
+            ], 200);
+        } else {
+            return response()->json([
+                'message' => 'لا يوجد طلاب نشطة حتى الآن.',
+                'count' => $count
+            ], 200);
+        }
     }
-}
     
 }    

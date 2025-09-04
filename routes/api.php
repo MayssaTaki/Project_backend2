@@ -72,7 +72,8 @@ Route::middleware([ 'reject.banned'])->group(function () {
 
     Route::post('/login', [AuthController::class, 'login']);
     Route::post('/courses/register', [CourseController::class, 'registerForCourse']);
-
+    Route::post('/teachers/{teacherId}/evaluate', [TeacherController::class, 'evaluateTeacher']);
+    Route::get('/teachers/{teacherId}/rating', [TeacherController::class, 'getTeacherRating']);
 });
 
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:api');
@@ -84,6 +85,7 @@ Route::middleware(['reject.banned'])->prefix('wallet')->group(function () {
     Route::post('/student/charge', [WalletController::class, 'studentCharge']);
     Route::get('/student/balance', [WalletController::class, 'studentBalance']);
 });
+
 Route::get('/teacher/balance', [WalletController::class, 'teacherBalance']);
 
 Route::middleware(['teacher'])->group(function () {
