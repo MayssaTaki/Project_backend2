@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Teacher;
+use App\Models\TeachersEvaluation;
 use App\Models\User;
 use App\Repositories\Contracts\TeacherRepositoryInterface;
 use App\Exceptions\TeacherRegistrationException;
@@ -73,5 +74,32 @@ public function search(string $query)
     public function getPendingTeachers()
     {
         return Teacher::where('status', 'pending')->get();
+    }
+
+    public function createEvaluation(array $evaluationData): TeachersEvaluation
+    {
+        return TeachersEvaluation::create($evaluationData);
+    }
+
+    public function updateEvaluation(int $evaluationId, int $value): TeachersEvaluation
+    {
+        $evaluation = TeachersEvaluation::findOrFail($evaluationId);
+        $evaluation->update([
+            'evaluation_value' => $value
+        ]);
+        return $evaluation->fresh();
+    }
+
+    public function getStudentEvaluation(int $teacherId, int $studentId): ?TeachersEvaluation
+    {
+        return TeachersEvaluation::where('teacher_id', $teacherId)
+            ->where('student_id', $studentId)
+            ->first();
+    }
+
+    public function getTeacherAverageRating(int $teacherId): float
+    {
+        return TeachersEvaluation::where('teacher_id', $teacherId)
+            ->avg('evaluation_value') ?? 0;
     }
 }
