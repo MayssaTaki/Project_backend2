@@ -9,6 +9,20 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\WalletController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\ExamController;
+use App\Http\Controllers\ExamAttemptController;
+
+
+
+
+
+Route::post('/exams', [ExamController::class, 'store']);
+Route::get('/courses/{courseId}/exams', [ExamController::class, 'getExamByCourse']);
+Route::get('/courses/{courseId}/exam/student', [ExamController::class, 'showExamForStudent']);
+
+  Route::post('/exams/{examId}/start', [ExamAttemptController::class, 'start']);
+    Route::post('/exam-attempts/{attemptId}/submit', [ExamAttemptController::class, 'submit']);
+
 
 
 
@@ -35,6 +49,7 @@ Route::get('/count/active', [StudentController::class, 'active']);
 Route::get('/categories/count', [CategoryController::class, 'countCategories']);
 Route::get('/categories', [CategoryController::class, 'getAll']);
 Route::get('/categories/search', [CategoryController::class, 'search']);
+Route::put('/categories/{category}', [CategoryController::class, 'update']);
 
 Route::get('/teachers/count', [TeacherController::class, 'countTeachers']);
 Route::get('/students/count', [StudentController::class, 'countStudents']);

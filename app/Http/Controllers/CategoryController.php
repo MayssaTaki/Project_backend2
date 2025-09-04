@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Services\CategoryService;
+use App\Services\Interfaces\CategoryServiceInterface;
 use App\Http\Requests\CategoryStoreRequest;
 use App\Http\Requests\CategoryUpdateRequest;
 use App\Http\Resources\CategoryResource;
@@ -15,7 +15,7 @@ class CategoryController extends Controller
 {
     protected $categoryService;
 
-    public function __construct(CategoryService $categoryService)
+    public function __construct(CategoryServiceInterface $categoryService)
     {
         $this->categoryService = $categoryService;
     }
@@ -88,7 +88,8 @@ class CategoryController extends Controller
             if ($request->hasFile('image')) {
                 $data['image'] = $request->file('image');
             }
-    
+
+       \Log::debug('بيانات التحديث من الفورم:', $data); 
             $category = $this->categoryService->updateCategory($id, $data);
     
             return response()->json([

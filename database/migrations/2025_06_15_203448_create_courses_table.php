@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')
                   ->constrained()
-                  ->onDelete('cascade');  // Delete course if user/teacher is deleted
+                  ->onDelete('cascade');  
             
             $table->foreignId('category_id')
                   ->constrained()
-                  ->onDelete('cascade'); // Delete course if category is deleted
+                  ->onDelete('cascade'); 
                   
             $table->string('name', 200);
             $table->decimal('price', 10, 2);
@@ -27,7 +27,6 @@ return new class extends Migration
             $table->boolean('accepted')->default(false);
             $table->timestamps();
             
-            // Optional: Indexes for better performance
             $table->index('user_id');
             $table->index('category_id');
         });

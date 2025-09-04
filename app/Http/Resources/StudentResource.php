@@ -19,6 +19,7 @@ class StudentResource extends JsonResource
             'last_name'  => $this->last_name,
             'phone' => $this->phone,
             'country' => $this->country,
+            'profile_image'=>$this->getImageAttribute,
             'city' => $this->city,
             'gender' => $this->gender,
             'date_of_birth'=>$this->date_of_birth,

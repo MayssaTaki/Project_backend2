@@ -338,4 +338,28 @@ class CourseService implements CourseServiceInterface
         }
     }
 
+    public function acceptCourse(int $courseId, $user)
+    {
+    
+
+        return $this->CourseRepository->acceptCourse($courseId);
+    }
+
+    public function rejectCourse(int $courseId, $user)
+    {
+    
+
+        return $this->CourseRepository->rejectCourse($courseId);
+    }
+        public function getAll(){
+     return $this->CourseRepository->getAll();
+
+        }
+
+
+          public function getStudentsByCourse(int $courseId)
+{
+         return $this->CourseRepository->getStudentsByCourse($courseId);
+
+}
 }

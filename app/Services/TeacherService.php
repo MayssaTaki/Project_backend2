@@ -14,11 +14,12 @@ use App\Repositories\UserRepository ;
 use App\Services\UserService ;
 use App\Repositories\Contracts\TeacherRepositoryInterface;
 use App\Repositories\Contracts\UserRepositoryInterface;
+use App\Services\Interfaces\TeacherServiceInterface;
 
 
 
 
-class TeacherService
+class TeacherService implements TeacherServiceInterface
 {
     protected TeacherRepositoryInterface $teacherRepository;
     protected UserRepository $userRepository;

@@ -19,4 +19,8 @@ interface CourseRepositoryInterface{
     public function findById(int $courseId): ?Course;
     public function createVideo(array $videoData): CourseVideo;
     public function getVideosByCourseId(int $courseId): Collection;
+    public function acceptCourse(int $courseId);
+    public function rejectCourse(int $courseId);
+        public function getAll();
+            public function getStudentsByCourse(int $courseId);
 }

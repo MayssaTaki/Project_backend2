@@ -106,4 +106,33 @@ class CourseRepository implements CourseRepositoryInterface
             ->orderBy('uploaded_at', 'asc')
             ->get();
     }
+
+     public function acceptCourse(int $courseId)
+    {
+        $course = Course::findOrFail($courseId);
+        $course->accepted = true;
+        $course->save();
+
+        return $course;
+    }
+
+    public function rejectCourse(int $courseId)
+    {
+        $course = Course::findOrFail($courseId);
+        $course->accepted = false;
+        $course->save();
+
+        return $course;
+    }
+   public function getAll()
+{
+    return Course::with('teacher.user')->paginate(10);
+}
+
+  public function getStudentsByCourse(int $courseId)
+    {
+        return CourseRegistration::with('student')
+            ->where('course_id', $courseId)
+            ->get(); 
+    }
 }

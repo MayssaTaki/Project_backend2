@@ -10,7 +10,7 @@ use App\Models\Teacher;
 use App\Http\Resources\TeacherResource;
 use Illuminate\Http\Request;
 
-use App\Services\TeacherService;
+use App\Services\Interfaces\TeacherServiceInterface;
 use Illuminate\Http\JsonResponse;
 use App\Exceptions\TeacherRegistrationException;
 use App\Exceptions\UserRegistrationException;
@@ -18,9 +18,9 @@ use Exception;
 
 class TeacherController extends Controller
 {
-    protected TeacherService $teacherService;
+    protected TeacherServiceInterface $teacherService;
 
-    public function __construct(TeacherService $teacherService)
+    public function __construct(TeacherServiceInterface $teacherService)
     {
         $this->teacherService = $teacherService;
     }

@@ -72,7 +72,6 @@
                 @endif
               </td>
               <td>
-                <!-- Edit button -->
                 <button
                   class="btn btn-outline-primary btn-sm"
                   data-bs-toggle="modal"
@@ -103,7 +102,6 @@
   </div>
 </div>
 
-{{-- Create Category Modal --}}
 <div class="modal fade" id="createCategoryModal" tabindex="-1" aria-labelledby="createCategoryModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <form action="{{ route('categories.store') }}" method="POST" enctype="multipart/form-data" class="modal-content">
@@ -131,10 +129,9 @@
   </div>
 </div>
 
-{{-- Edit Category Modal --}}
 <div class="modal fade" id="editCategoryModal" tabindex="-1" aria-labelledby="editCategoryModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <form method="POST" enctype="multipart/form-data" action="{{ route('categories.update', ['category' => 0]) }}" class="modal-content" id="editCategoryForm">
+    <form method="POST" enctype="multipart/form-data" action="#" class="modal-content" id="editCategoryForm">
       @csrf
       @method('PUT')
       <div class="modal-header bg-primary text-white">
@@ -153,7 +150,7 @@
           <label for="image-edit" class="form-label">Image (اختياري)</label>
           <input type="file" name="image" id="image-edit" class="form-control" accept="image/*">
           <div class="mt-2">
-            <img src="" alt="Current Image" id="current-image" class="rounded-circle shadow" style="width: 60px; height: 60px; object-fit: cover;">
+            <img src="" alt="Current Image" id="current-image" class="rounded-circle shadow" style="width: 60px; height: 60px; object-fit: cover; display: none;">
           </div>
         </div>
       </div>
@@ -165,27 +162,28 @@
   </div>
 </div>
 
-{{-- Script to fill edit modal data --}}
 <script>
-  const editModal = document.getElementById('editCategoryModal')
+  const editModal = document.getElementById('editCategoryModal');
   editModal.addEventListener('show.bs.modal', event => {
-    const button = event.relatedTarget
+    const button = event.relatedTarget;
 
-    const id = button.getAttribute('data-id')
-    const name = button.getAttribute('data-name')
-    const image = button.getAttribute('data-image')
+    const id = button.getAttribute('data-id');
+    const name = button.getAttribute('data-name');
+    const image = button.getAttribute('data-image');
 
-    // Fill form inputs
-    document.getElementById('edit-category-id').value = id
-    document.getElementById('name-edit').value = name
-    const currentImage = document.getElementById('current-image')
+    document.getElementById('edit-category-id').value = id;
+    document.getElementById('name-edit').value = name;
+    const currentImage = document.getElementById('current-image');
 
     if(image){
-      currentImage.src = image
-      currentImage.style.display = 'inline-block'
+      currentImage.src = image;
+      currentImage.style.display = 'inline-block';
     } else {
-      currentImage.style.display = 'none'
+      currentImage.style.display = 'none';
     }
-  })
+
+    const form = document.getElementById('editCategoryForm');
+    form.action = `/categories/${id}`;  
+  });
 </script>
 @endsection

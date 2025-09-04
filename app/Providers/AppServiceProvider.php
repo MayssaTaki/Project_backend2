@@ -6,6 +6,8 @@ use App\Repositories\TeacherRepository;
 use App\Repositories\StudentRepository;
 use App\Repositories\CategoryRepository;
 use App\Repositories\CourseRepository;
+use App\Repositories\ExamRepository;
+use App\Repositories\ExamAttemptRepository;
 
 use App\Repositories\WalletRepository;
 use Illuminate\Support\Facades\Gate;
@@ -15,8 +17,23 @@ use App\Repositories\Contracts\UserRepositoryInterface;
 use App\Repositories\Contracts\WalletRepositoryInterface;
 use App\Repositories\Contracts\CategoryRepositoryInterface;
 use App\Repositories\Contracts\CourseRepositoryInterface;
+use App\Repositories\Contracts\ExamRepositoryInterface;
+use App\Repositories\Contracts\ExamAttemptRepositoryInterface;
+
 use App\Services\CourseService;
+use App\Services\StudentService;
+use App\Services\TeacherService;
+use App\Services\CategoryService;
+use App\Services\ExamService;
+use App\Services\ExamAttemptService;
+
 use App\Services\Interfaces\CourseServiceInterface;
+use App\Services\Interfaces\StudentServiceInterface;
+use App\Services\Interfaces\TeacherServiceInterface;
+use App\Services\Interfaces\CategoryServiceInterface;
+use App\Services\Interfaces\ExamServiceInterface;
+use App\Services\Interfaces\ExamAttemptServiceInterface;
+
 
 use Illuminate\Support\ServiceProvider;
 
@@ -29,12 +46,20 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
         $this->app->bind(StudentRepositoryInterface::class, StudentRepository::class);
+        $this->app->bind(StudentServiceInterface::class, StudentService::class);
         $this->app->bind(TeacherRepositoryInterface::class, TeacherRepository::class);
+        $this->app->bind(TeacherServiceInterface::class, TeacherService::class);
+          $this->app->bind(ExamRepositoryInterface::class, ExamRepository::class);
+        $this->app->bind(ExamServiceInterface::class, ExamService::class);
         $this->app->bind(CategoryRepositoryInterface::class, CategoryRepository::class);
+        $this->app->bind(CategoryServiceInterface::class, CategoryService::class);
         $this->app->bind(WalletRepositoryInterface::class, WalletRepository::class);
         $this->app->bind(CourseRepositoryInterface::class, CourseRepository::class);
         $this->app->bind(CourseServiceInterface::class, CourseService::class);
         $this->app->bind(\App\Services\TransactionService::class);
+    $this->app->bind(ExamAttemptRepositoryInterface::class, ExamAttemptRepository::class);
+        $this->app->bind(ExamAttemptServiceInterface::class, ExamAttemptService::class);
+
     }
 
     /**
