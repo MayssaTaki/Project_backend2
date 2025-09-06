@@ -38,9 +38,15 @@ class AuthService
     RateLimiter::clear($key); 
 
     $user = auth()->user();
-
+ if ($user->role === 'student') {
+        $userResource = new \App\Http\Resources\StudentResource($user->student);
+    } elseif ($user->role === 'teacher') {
+        $userResource = new \App\Http\Resources\TeacherResource($user->teacher);
+    } else {
+        $userResource = $user; 
+    }
     return [
-        'user' => $user,
+        'user' => $userResource,
         'token' => $token,
         'token_type' => 'bearer',
     ];
