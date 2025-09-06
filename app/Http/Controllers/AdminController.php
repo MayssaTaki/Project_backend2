@@ -103,6 +103,7 @@ public function getAllTeachers()
 }
 public function count()
 {
+     
     $teachers = [
         'pending' => Teacher::where('status', 'pending')->count(),
         'approved' => Teacher::where('status', 'approved')->count(),

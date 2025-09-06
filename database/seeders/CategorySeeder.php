@@ -17,5 +17,15 @@ class CategorySeeder extends Seeder
         Category::create(['name' => 'طبي']);
         Category::create(['name' => 'رياضيات ']);
         Category::create(['name' => 'كيمياء']);
+        Category::create(['name' => 'انكليزي']);
+        Category::create(['name' => 'فرنسي']);
+        Category::create(['name' => 'فيزياء']);
+        Category::create(['name' => 'علوم طبيعية ']);
+        Category::create(['name' => 'نفسي']);
+       Category::create(['name' => 'فلك']);
+         Category::create(['name' => 'ديني']);
+
+
+
     }
 }

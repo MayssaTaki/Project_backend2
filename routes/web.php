@@ -6,8 +6,8 @@ use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', [AdminController::class, 'count'])->name('welcome');
-
+Route::get('/', [AdminController::class, 'count'])
+    ->name('welcome');
 Route::get('/categories', [AdminController::class, 'index'])->name('categories.index');
 Route::get('/categories/search', [AdminController::class, 'search'])->name('categories.search');
 Route::post('/categories', [AdminController::class, 'store'])->name('categories.store');
