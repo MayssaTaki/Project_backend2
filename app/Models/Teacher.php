@@ -24,7 +24,7 @@ class Teacher extends Model
         'gender',
         'status',
     ];
-    
+
 
 
     public function user()
@@ -36,7 +36,7 @@ class Teacher extends Model
     {
         return $this->morphOne(Wallet::class, 'walletable');
     }
-    
+
     public function getProfileImageAttribute($value)
     {
         if (!empty($value)) {
@@ -55,4 +55,8 @@ class Teacher extends Model
     {
         return $this->evaluations()->avg('evaluation_value');
     }
+    public function courses()
+{
+    return $this->hasMany(Course::class);
+}
 }

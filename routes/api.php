@@ -89,6 +89,7 @@ Route::middleware(['reject.banned'])->prefix('wallet')->group(function () {
 Route::get('/teacher/balance', [WalletController::class, 'teacherBalance']);
 
 Route::middleware(['teacher'])->group(function () {
+        Route::post('/my-courses', [TeacherController::class, 'getMyCourses']);
     Route::post('/courses/add', [CourseController::class, 'addCourse']);
     Route::post('/courses/update', [CourseController::class, 'updateCourse']);
     Route::post('/courses/uploadVideo/{courseId}', [CourseController::class, 'uploadVideo']);
