@@ -310,7 +310,7 @@ return [
             'icon' => 'fas fa-moon',
             'topnav_right' => true,
             'url' => '#',
-            'id' => 'toggle-dark-mode', 
+            'id' => 'toggle-dark-mode',
         ],
         [
             'type' => 'fullscreen-widget',
@@ -318,44 +318,34 @@ return [
         ],
 
         // Sidebar items:
-       
-       
+
+
         [
             'text' => 'category',
             'url' => 'categories',
             'icon' => 'fas fa-tags',
-            
+
         ],
           [
             'text' => 'teacher',
             'url' => 'teachers',
             'icon' => 'fas fa-chalkboard-teacher',
-            
+
         ],
           [
             'text' => 'student',
             'url' => 'students',
             'icon' => 'fas fa-users',
-            
+
         ],
            [
             'text' => 'Courses',
             'url' => 'courses',
             'icon' => 'fas fa-laptop',
-            
+
         ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        
+      
+
     ],
 
     /*

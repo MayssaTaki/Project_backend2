@@ -7,6 +7,7 @@ use App\Http\Requests\TeacherRegisterRequest;
 use App\Http\Requests\UserRegisterRequest;
 use App\Http\Requests\TeacherUpdateRequest;
 use App\Models\Teacher;
+use App\Models\Course;
 use App\Http\Resources\TeacherResource;
 use Illuminate\Http\Request;
 
@@ -30,7 +31,7 @@ class TeacherController extends Controller
         try {
             $data = $request->validated();
             $teacher = $this->teacherService->register($data);
-    
+
             return response()->json([
                 'status' => 'success',
                 'message' => 'تم تسجيل الأستاذ والمستخدم بنجاح.',
@@ -70,20 +71,20 @@ class TeacherController extends Controller
 public function getAllTeachers()
     {
         $teachers = $this->teacherService->getAllTeachers();
-    
+
         if ($teachers->isNotEmpty()) {
             return response()->json([
                 'status' => 'success',
                 'message' => 'تم استرجاع جميع االمدربين بنجاح',
 'data' => \App\Http\Resources\TeacherResource::collection($teachers)
-            ], 200); 
+            ], 200);
         }
-    
+
         return response()->json([
             'status' => 'fail',
             'message' => 'لم يتم العثور على المدربين',
             'data' => []
-        ], 404); 
+        ], 404);
     }
 
 
@@ -176,7 +177,7 @@ public function getAllTeachers()
     public function rejected()
     {
         $teachers = $this->teacherService->getRejectedTeachers();
-        $count = $teachers->count(); 
+        $count = $teachers->count();
 
         if ($count > 0) {
             return response()->json([
@@ -195,7 +196,7 @@ public function getAllTeachers()
     public function pened()
     {
         $teachers = $this->teacherService->getPendingTeachers();
-        $count = $teachers->count();  
+        $count = $teachers->count();
 
         if ($count > 0) {
             return response()->json([
@@ -240,11 +241,45 @@ public function getAllTeachers()
     public function getTeacherRating($teacherId)
     {
         $result = $this->teacherService->getTeacherAverageRating($teacherId);
-        
+
         return response()->json(
             $result,
             $result['status'] === 'error' ? 404 : 200
         );
     }
 
-}    
+
+public function getMyCourses(Request $request)
+{
+    try {
+        // 1️⃣ جلب teacher_id من request
+        $teacherId = $request->input('teacher_id');
+
+        if (!$teacherId) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Teacher ID is required.'
+            ], 400);
+        }
+
+        // 2️⃣ جلب الكورسات حسب teacher_id
+        $courses =Course::where('user_id', $teacherId)->get();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Courses retrieved successfully.',
+            'data' => $courses
+        ], 200);
+
+    } catch (\Exception $e) {
+        return response()->json([
+            'status' => 'error',
+            'message' => $e->getMessage()
+        ], 500);
+    }
+}
+
+
+
+
+}
