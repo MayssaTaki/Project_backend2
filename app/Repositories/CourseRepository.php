@@ -31,7 +31,6 @@ class CourseRepository implements CourseRepositoryInterface
     public function findWithRelations(int $id, array $relations): Course
     {
         return Course::with($relations)
-                        ->where('accepted', true)
                         ->findOrFail($id);
     }
 
